@@ -355,7 +355,7 @@ async function loadSiteContent() {
     // --- TECH STACK ---
     const techContainer = document.getElementById("techstack-marquee");
     if (techContainer && data.techstack && data.techstack.length > 0) {
-      let techHTML = '<div class="flex items-center gap-16 px-8 min-w-max">';
+      let techHTML = '<div class="flex items-center gap-16 px-8 min-w-max flex-shrink-0">';
       data.techstack.forEach(tech => {
         techHTML += `
           <div class="flex flex-col items-center gap-3 hover:scale-110 transition">

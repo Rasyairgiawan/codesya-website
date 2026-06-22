@@ -59,7 +59,7 @@ FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\admin.html
 FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\index.html 
 ============================== 
 <!doctype html>
-<html lang="id" class="scroll-smooth">
+<html lang="id" class="scroll-smooth overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -80,7 +80,6 @@ FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\index.html
               sans: ["Inter", "sans-serif"],
               display: ["Inter", "sans-serif"],
             },
-            // --- KODE ANIMASI BARU DITAMBAHKAN DI SINI ---
             animation: {
               marquee: "marquee 25s linear infinite",
               'marquee-up': 'marqueeUp 30s linear infinite',
@@ -100,7 +99,6 @@ FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\index.html
                 "100%": { transform: "translateY(0%)" },
               },
             },
-            // ----------------------------------------------
           },
         },
       };
@@ -199,15 +197,14 @@ FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\index.html
       </div>
     </nav>
 
+    <!-- ========== HERO SECTION (dinamis) ========== -->
     <section
       id="beranda"
       class="pt-32 pb-20 md:pt-40 md:pb-28 px-4 relative flex items-center min-h-screen"
     >
-      <div
-        class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-brand-cyan/20 rounded-full blur-[120px] -z-10 pointer-events-none"
-      ></div>
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-brand-cyan/20 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
       <div class="max-w-5xl mx-auto text-center w-full">
-        <h1
+        <h1 id="hero-title"
           class="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight"
         >
           Bikin Bisnismu Go Digital <br class="hidden md:block" />
@@ -217,7 +214,7 @@ FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\index.html
             >Website Profesional</span
           >
         </h1>
-        <p
+        <p id="hero-subtitle"
           class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
         >
           Tingkatkan kredibilitas dan raih lebih banyak pelanggan. Kami
@@ -225,12 +222,12 @@ FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\index.html
           bisnismu.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a
+          <a id="hero-cta1"
             href="#harga"
             class="bg-brand-cyan text-brand-dark px-8 py-4 rounded-full font-semibold hover:bg-white transition text-lg"
             >Mulai Proyekmu</a
           >
-          <a
+          <a id="hero-cta2"
             href="#portofolio"
             class="bg-transparent border border-white/20 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition text-lg"
             >Lihat Portofolio</a
@@ -239,6 +236,7 @@ FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\index.html
       </div>
     </section>
 
+    <!-- ========== TECH STACK MARQUEE (dinamis) ========== -->
     <section class="py-12 border-y border-white/10 bg-white/5 overflow-hidden">
       <div class="max-w-7xl mx-auto text-center mb-10">
         <p class="text-sm text-gray-400 font-medium tracking-widest uppercase">Teknologi yang Kami Gunakan</p>
@@ -248,38 +246,20 @@ FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\index.html
       </div>
     </section>
     
+    <!-- ========== LAYANAN SECTION (dinamis) ========== -->
     <section id="layanan" class="py-24 px-4 relative">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-5xl font-semibold mb-4">Layanan <span class="text-brand-cyan">Terbaik</span> Kami</h2>
                 <p class="text-gray-400 text-lg">Solusi digital tepat guna untuk berbagai kebutuhan bisnismu.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-brand-navy p-8 rounded-2xl border border-white/5 hover:border-brand-cyan/30 transition duration-300 group">
-                    <div class="w-14 h-14 bg-brand-cyan/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <i class="bi bi-laptop text-2xl text-brand-cyan"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Landing Page</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Satu halaman fokus untuk promosi produk atau jasa dengan tingkat konversi tinggi.</p>
-                </div>
-                <div class="bg-brand-navy p-8 rounded-2xl border border-white/5 hover:border-brand-cyan/30 transition duration-300 group">
-                    <div class="w-14 h-14 bg-brand-cyan/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <i class="bi bi-building text-2xl text-brand-cyan"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Company Profile</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Tingkatkan kredibilitas perusahaan dengan website profil yang elegan dan informatif.</p>
-                </div>
-                <div class="bg-brand-navy p-8 rounded-2xl border border-white/5 hover:border-brand-cyan/30 transition duration-300 group">
-                    <div class="w-14 h-14 bg-brand-cyan/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <i class="bi bi-cart3 text-2xl text-brand-cyan"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Toko Online (E-Commerce)</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Jangkau pembeli di seluruh Indonesia dengan sistem belanja otomatis 24 jam.</p>
-                </div>
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Diisi oleh JavaScript -->
             </div>
         </div>
     </section>
 
+    <!-- ========== PORTOFOLIO SECTION (marquee 3 kolom) ========== -->
     <section id="portofolio" class="py-24 px-4 relative z-10">
         <div class="max-w-screen-2xl mx-auto">
             <div class="text-center mb-16">
@@ -311,8 +291,8 @@ FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\index.html
         </div>
     </section>
 
+    <!-- ========== CARA KERJA (statis) ========== -->
     <section class="py-24 px-4">
-        <!-- Cara Kerja (tetap) -->
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-5xl font-semibold mb-4">Cara <span class="text-brand-cyan">Kerja</span> Kami</h2>
@@ -344,57 +324,20 @@ FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\index.html
         </div>
     </section>
 
+    <!-- ========== HARGA SECTION (dinamis) ========== -->
     <section id="harga" class="py-24 px-4 relative">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-5xl font-light mb-4">Temukan <span class="text-brand-cyan font-semibold">Paket Sempurna</span> untuk Bisnismu</h2>
                 <p class="text-gray-400 text-lg">Mulai gratis, lalu kembangkan. Paket fleksibel untuk semua proyek.</p>
             </div>
-            <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
-                <!-- Kartu Basic, Team, Agency tetap sama -->
-                <div class="glass-card glow-card rounded-2xl p-8 max-w-sm w-full transition duration-300 hover:border-brand-cyan/50">
-                    <h3 class="text-4xl font-light text-white mb-2">Basic</h3>
-                    <p class="text-gray-400 text-sm mb-6">Sempurna untuk personal project & hobbyist.</p>
-                    <div class="flex items-baseline gap-2 mb-6"><span class="text-5xl font-light">$0</span><span class="text-sm text-gray-400">/mo</span></div>
-                    <div class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent w-full mb-6"></div>
-                    <ul class="space-y-3 text-gray-300 text-sm mb-8">
-                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> 1 User</li>
-                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> 1GB Storage</li>
-                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> Community Forum</li>
-                    </ul>
-                    <button class="w-full py-3 rounded-xl font-semibold bg-white/10 hover:bg-white/20 text-white transition border border-white/20">Get Started</button>
-                </div>
-
-                <div class="glass-card glow-card rounded-2xl p-8 max-w-sm w-full scale-105 border-brand-cyan/30 ring-2 ring-brand-cyan/20 relative shadow-2xl">
-                    <div class="absolute -top-4 right-6 bg-brand-cyan text-brand-dark px-4 py-1.5 text-xs font-bold rounded-full z-20 shadow-lg">Most Popular</div>
-                    <h3 class="text-4xl font-light text-white mb-2">Team</h3>
-                    <p class="text-gray-400 text-sm mb-6">Kolaborasi tim untuk beberapa proyek.</p>
-                    <div class="flex items-baseline gap-2 mb-6"><span class="text-5xl font-light">$49</span><span class="text-sm text-gray-400">/mo</span></div>
-                    <div class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent w-full mb-6"></div>
-                    <ul class="space-y-3 text-gray-300 text-sm mb-8">
-                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> 10 Users</li>
-                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> 100GB Storage</li>
-                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> Email Support</li>
-                    </ul>
-                    <button class="w-full py-3 rounded-xl font-semibold bg-brand-cyan hover:bg-cyan-300 text-brand-dark transition relative z-10">Choose Team Plan</button>
-                </div>
-
-                <div class="glass-card glow-card rounded-2xl p-8 max-w-sm w-full transition duration-300 hover:border-brand-cyan/50">
-                    <h3 class="text-4xl font-light text-white mb-2">Agency</h3>
-                    <p class="text-gray-400 text-sm mb-6">Manajemen semua klien dalam satu atap.</p>
-                    <div class="flex items-baseline gap-2 mb-6"><span class="text-5xl font-light">$149</span><span class="text-sm text-gray-400">/mo</span></div>
-                    <div class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent w-full mb-6"></div>
-                    <ul class="space-y-3 text-gray-300 text-sm mb-8">
-                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> Unlimited Users</li>
-                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> 1TB Storage</li>
-                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> Dedicated Support</li>
-                    </ul>
-                    <button class="w-full py-3 rounded-xl font-semibold bg-brand-cyan hover:bg-cyan-300 text-brand-dark transition relative z-10">Contact Us</button>
-                </div>
+            <div id="pricing-grid" class="flex flex-col md:flex-row gap-8 justify-center items-center">
+                <!-- Diisi oleh JavaScript -->
             </div>
         </div>
     </section>
 
+    <!-- ========== TESTIMONI SECTION (dinamis) ========== -->
     <section class="py-24 bg-white/5 relative overflow-hidden" id="testimoni">
       <div class="max-w-4xl mx-auto text-center mb-8 relative z-10">
         <h2 class="text-3xl md:text-5xl font-semibold mb-4">Apa Kata Klien Kami?</h2>
@@ -407,6 +350,7 @@ FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\index.html
       </div>
     </section>
 
+    <!-- ========== FAQ SECTION (dinamis) ========== -->
     <section id="faq" class="py-24 px-4 max-w-5xl mx-auto">
       <div class="text-center mb-16">
         <p class="text-sm text-brand-cyan font-medium tracking-wide mb-2 uppercase">Bantuan & Informasi</p>
@@ -419,11 +363,12 @@ FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\index.html
       </div>
     </section>
 
+    <!-- ========== KONTAK SECTION (dinamis) ========== -->
     <section id="kontak" class="py-24 px-4 bg-gradient-to-b from-brand-dark to-brand-navy border-t border-white/5">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">Siap Membangun Kehadiran Digital Anda?</h2>
-        <p class="text-xl text-gray-400 mb-10">Jangan biarkan kompetitormu mendahului. Hubungi kami sekarang dan mari diskusikan proyek impianmu.</p>
-        <a href="https://wa.me/6285735828392" target="_blank" class="inline-flex items-center gap-3 bg-brand-cyan text-brand-dark px-10 py-4 rounded-full font-bold text-lg hover:bg-white transition shadow-[0_0_20px_rgba(0,180,216,0.5)]"><i class="bi bi-whatsapp text-2xl"></i> Chat via WhatsApp</a>
+        <h2 id="contact-heading" class="text-4xl md:text-5xl font-bold mb-6">Siap Membangun Kehadiran Digital Anda?</h2>
+        <p id="contact-subtext" class="text-xl text-gray-400 mb-10">Jangan biarkan kompetitormu mendahului. Hubungi kami sekarang dan mari diskusikan proyek impianmu.</p>
+        <a id="contact-wa-link" href="https://wa.me/6285735828392" target="_blank" class="inline-flex items-center gap-3 bg-brand-cyan text-brand-dark px-10 py-4 rounded-full font-bold text-lg hover:bg-white transition shadow-[0_0_20px_rgba(0,180,216,0.5)]"><i class="bi bi-whatsapp text-2xl"></i> Chat via WhatsApp</a>
       </div>
     </section>
 
@@ -731,9 +676,7 @@ document.getElementById("btn-login").addEventListener("click", async () => {
   }
 });
 
-document
-  .getElementById("btn-logout")
-  .addEventListener("click", () => signOut(auth));
+document.getElementById("btn-logout").addEventListener("click", () => signOut(auth));
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -753,6 +696,8 @@ let siteData = {
   techstack: [],
   pricing: [],
   testimonials: [],
+  testimonialsHeading: "Apa Kata Klien Kami?",
+  testimonialsSubheading: "Kepercayaan mereka adalah pencapaian terbesar kami.",
   faq: [],
   contact: { heading: "", subtext: "", waNumber: "", waMessage: "" },
 };
@@ -786,39 +731,29 @@ function renderCurrentTab() {
       html += formHero();
       break;
     case "services":
-      html += formList(
-        "services",
-        ["icon", "title", "desc"],
-        siteData.services,
-      );
+      html += formList("services", ["icon", "title", "desc"], siteData.services);
       break;
     case "techstack":
       html += formList("techstack", ["name", "iconClass"], siteData.techstack);
       break;
     case "pricing":
-      html += formList(
-        "pricing",
-        ["name", "price", "unit", "desc", "features"],
-        siteData.pricing,
-      );
+      html += formList("pricing", ["name", "price", "unit", "desc", "features"], siteData.pricing);
       break;
     case "testimonials":
-      html += formList(
-        "testimonials",
-        ["text", "by", "img"],
-        siteData.testimonials,
-      );
+      html += `
+        <div class="mb-8 p-4 bg-brand-navy rounded border border-white/10">
+          <h3 class="text-lg font-semibold mb-4">Judul & Subjudul Section</h3>
+          <input class="w-full bg-brand-dark border border-white/10 p-2 rounded text-white mb-2" value="${esc(siteData.testimonialsHeading || '')}" data-field="testimonialsHeading" placeholder="Heading (misal: Apa Kata Klien Kami?)">
+          <input class="w-full bg-brand-dark border border-white/10 p-2 rounded text-white" value="${esc(siteData.testimonialsSubheading || '')}" data-field="testimonialsSubheading" placeholder="Subheading (misal: Kepercayaan mereka adalah pencapaian terbesar kami.)">
+        </div>
+      `;
+      html += formList("testimonials", ["text", "by", "img"], siteData.testimonials);
       break;
     case "faq":
       html += formList("faq", ["q", "a"], siteData.faq);
       break;
     case "contact":
-      html += formObject("contact", siteData.contact, [
-        "heading",
-        "subtext",
-        "waNumber",
-        "waMessage",
-      ]);
+      html += formObject("contact", siteData.contact, ["heading", "subtext", "waNumber", "waMessage"]);
       break;
     case "portfolio":
       html += portfolioManager();
@@ -828,9 +763,8 @@ function renderCurrentTab() {
   }
 
   container.innerHTML = html;
-  attachSaveListeners(); // untuk semua tab kecuali portfolio (dan tidak ganggu portfolio)
+  attachSaveListeners();
 
-  // Hanya untuk tab portfolio
   if (currentTab === "portfolio") {
     loadPortfolios();
     attachPortfolioListener();
@@ -855,7 +789,7 @@ function formHero() {
 function formObject(key, obj, fields) {
   let html = '<div class="space-y-4">';
   fields.forEach((f) => {
-    html += `<input class="w-full bg-brand-navy border border-white/10 p-3 rounded text-white" value="${esc(obj[f] || "")}" data-field="${key}.${f}" placeholder="${f}">`;
+    html += `<input class="w-full bg-brand-navy border border-white/10 p-3 rounded text-white" value="${esc(obj[f] || '')}" data-field="${key}.${f}" placeholder="${f}">`;
   });
   html += `<button class="save-btn bg-brand-cyan text-brand-dark px-6 py-2 rounded font-bold">Simpan</button></div>`;
   return html;
@@ -870,7 +804,7 @@ function formList(key, fields, items) {
         const val = Array.isArray(item[f]) ? item[f].join(", ") : item[f] || "";
         html += `<input class="w-full bg-brand-dark border border-white/10 p-2 rounded text-white mb-2" value="${esc(val)}" data-field="${key}.${i}.${f}" placeholder="${f} (pisahkan dengan koma)">`;
       } else {
-        html += `<input class="w-full bg-brand-dark border border-white/10 p-2 rounded text-white mb-2" value="${esc(item[f] || "")}" data-field="${key}.${i}.${f}" placeholder="${f}">`;
+        html += `<input class="w-full bg-brand-dark border border-white/10 p-2 rounded text-white mb-2" value="${esc(item[f] || '')}" data-field="${key}.${i}.${f}" placeholder="${f}">`;
       }
     });
     html += `<button class="del-item-btn text-red-400 text-sm mt-2">Hapus</button></div>`;
@@ -882,7 +816,6 @@ function formList(key, fields, items) {
 
 // ---------- SAVE HANDLER ----------
 function attachSaveListeners() {
-  // FUNGSI BARU: Mengamankan ketikan yang belum disave agar tidak hilang
   function syncInputsToSiteData() {
     const inputs = document.querySelectorAll("[data-field]");
     inputs.forEach((input) => {
@@ -892,12 +825,9 @@ function attachSaveListeners() {
     });
   }
 
-  // Tombol Simpan Semua
   document.querySelectorAll(".save-btn").forEach((btn) => {
     btn.addEventListener("click", async (e) => {
       e.preventDefault();
-
-      // Sinkronisasi data ketikan terbaru
       syncInputsToSiteData();
       const newData = JSON.parse(JSON.stringify(siteData));
 
@@ -912,26 +842,24 @@ function attachSaveListeners() {
     });
   });
 
-  // Tombol tambah item (Diberi kata 'button' agar tidak salah target ke form)
   document.querySelectorAll("button[id^='add-']").forEach((btn) => {
     btn.addEventListener("click", () => {
-      syncInputsToSiteData(); // Amankan ketikan dulu
+      syncInputsToSiteData();
       const key = btn.id.replace("add-", "").replace("-btn", "");
       const template = getDefaultItem(key);
       if (!siteData[key]) siteData[key] = [];
       siteData[key].push(template);
-      renderCurrentTab(); // Baru render ulang
+      renderCurrentTab();
     });
   });
 
-  // Tombol hapus item
   document.querySelectorAll(".del-item-btn").forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      syncInputsToSiteData(); // Amankan ketikan dulu
+      syncInputsToSiteData();
       const parent = e.target.closest("[data-index]");
       const idx = parseInt(parent.dataset.index);
       siteData[currentTab].splice(idx, 1);
-      renderCurrentTab(); // Baru render ulang
+      renderCurrentTab();
     });
   });
 }
@@ -941,24 +869,11 @@ function getDefaultItem(key) {
     case "services":
       return { icon: "bi-star", title: "Judul", desc: "Deskripsi" };
     case "techstack":
-      return {
-        name: "Nama Teknologi",
-        iconClass: "devicon-react-original colored text-6xl",
-      };
+      return { name: "Nama Teknologi", iconClass: "devicon-react-original colored text-6xl" };
     case "pricing":
-      return {
-        name: "Nama",
-        price: "0",
-        unit: "/mo",
-        desc: "Deskripsi",
-        features: ["Fitur"],
-      };
+      return { name: "Nama", price: "0", unit: "/proyek", desc: "Deskripsi", features: ["Fitur"] };
     case "testimonials":
-      return {
-        text: "Testimoni",
-        by: "Nama",
-        img: "https://i.pravatar.cc/150",
-      };
+      return { text: "Testimoni", by: "Nama", img: "https://i.pravatar.cc/150" };
     case "faq":
       return { q: "Pertanyaan", a: "Jawaban" };
     default:
@@ -979,10 +894,7 @@ function setNestedValue(obj, path, value) {
   }
   const last = keys[keys.length - 1];
   if (last === "features" && typeof value === "string") {
-    current[last] = value
-      .split(",")
-      .map((s) => s.trim())
-      .filter((s) => s !== "");
+    current[last] = value.split(",").map(s => s.trim()).filter(s => s !== "");
   } else {
     current[last] = value;
   }
@@ -1049,7 +961,6 @@ function portfolioManager() {
 function attachPortfolioListener() {
   const btnSave = document.getElementById("btn-save-portfolio");
   if (!btnSave) return;
-  // Hapus listener sebelumnya (jika ada) dengan membuat fungsi baru
   btnSave.onclick = async () => {
     const title = document.getElementById("porto-title").value.trim();
     const category = document.getElementById("porto-category").value;
@@ -1074,14 +985,13 @@ function attachPortfolioListener() {
       alert("Gagal menyimpan: " + err.message);
     }
   };
-}
- 
+} 
  
 ============================== 
 FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\script.js 
 ============================== 
 // ==========================================
-// CODESYA STUDIO – MAIN SCRIPT (CLEAN)
+// CODESYA STUDIO – MAIN SCRIPT (FINAL)
 // ==========================================
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 import {
@@ -1090,9 +1000,7 @@ import {
   getDocs,
   orderBy,
   query,
-  limit,
-  startAfter,
-  doc,       
+  doc,
   getDoc
 } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
@@ -1130,26 +1038,21 @@ const testimonialContainer = document.getElementById("testimonial-container");
 const btnPrev = document.getElementById("btn-prev-testi");
 const btnNext = document.getElementById("btn-next-testi");
 
-const testimonialsData = [
-  { id: 1, text: "Website yang dibuat sangat cepat...", by: "Alex, CEO TechCorp", img: "https://i.pravatar.cc/150?img=11" },
-  { id: 2, text: "Traffic toko online kami naik drastis...", by: "Budi, Owner HypeStore", img: "https://i.pravatar.cc/150?img=12" },
-  { id: 3, text: "Proses diskusi sangat nyambung...", by: "Citra, Founder Klinik Gigi", img: "https://i.pravatar.cc/150?img=5" },
-  { id: 4, text: "Saya awam soal coding...", by: "Diana, Business Consultant", img: "https://i.pravatar.cc/150?img=9" },
-  { id: 5, text: "Harga paket Pro sangat worth-it...", by: "Eko, Direktur Utama", img: "https://i.pravatar.cc/150?img=15" },
-];
-
-let currentList = [...testimonialsData];
+// Tidak ada data fallback – akan diisi dari Firestore
+let testimonialsData = [];
+let currentList = [];
 let cardSize = window.innerWidth > 640 ? 365 : 290;
 
 window.addEventListener("resize", () => {
   const newSize = window.innerWidth > 640 ? 365 : 290;
   if (newSize !== cardSize) {
     cardSize = newSize;
-    initTestimonials();
+    if (testimonialsData.length > 0) initTestimonials();
   }
 });
 
 function handleMove(steps) {
+  if (currentList.length === 0) return;
   const newList = [...currentList];
   if (steps > 0) {
     for (let i = steps; i > 0; i--) newList.push(newList.shift());
@@ -1161,6 +1064,7 @@ function handleMove(steps) {
 }
 
 function initTestimonials() {
+  if (!testimonialContainer) return;
   testimonialContainer.innerHTML = "";
   testimonialsData.forEach((testi) => {
     const card = document.createElement("div");
@@ -1222,9 +1126,8 @@ function updateCarouselPositions() {
   });
 }
 
-initTestimonials();
-btnPrev.addEventListener("click", () => handleMove(-1));
-btnNext.addEventListener("click", () => handleMove(1));
+if (btnPrev) btnPrev.addEventListener("click", () => handleMove(-1));
+if (btnNext) btnNext.addEventListener("click", () => handleMove(1));
 
 // ==========================================
 // 3. WEBGL SHADER BACKGROUND
@@ -1278,334 +1181,291 @@ if (canvas) {
 }
 
 // ==========================================
-// 4. RIPPLE BUTTON EFFECT
+// 4. RIPPLE BUTTON EFFECT (delegasi)
 // ==========================================
-document.querySelectorAll("#harga button, .ripple-btn").forEach(btn => {
-  btn.classList.add("ripple-btn");
-  btn.addEventListener("click", function(e) {
-    const rect = this.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const ripple = document.createElement("span");
-    ripple.className = "ripple-effect";
-    ripple.style.left = `${x}px`;
-    ripple.style.top = `${y}px`;
-    this.appendChild(ripple);
-    setTimeout(() => ripple.remove(), 600);
-  });
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('#harga button, .ripple-btn');
+  if (!btn) return;
+  const rect = btn.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  const ripple = document.createElement("span");
+  ripple.className = "ripple-effect";
+  ripple.style.left = `${x}px`;
+  ripple.style.top = `${y}px`;
+  btn.appendChild(ripple);
+  setTimeout(() => ripple.remove(), 600);
 });
 
 // ==========================================
-// 5. SPOTLIGHT CURSOR PADA KARTU HARGA
+// 5. SPOTLIGHT CURSOR PADA KARTU HARGA (delegasi)
 // ==========================================
-document.querySelectorAll(".glow-card").forEach(card => {
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    card.style.setProperty("--mouse-x", `${x}px`);
-    card.style.setProperty("--mouse-y", `${y}px`);
-  });
+document.addEventListener('mousemove', function(e) {
+  const card = e.target.closest('.glow-card');
+  if (!card) return;
+  const rect = card.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  card.style.setProperty("--mouse-x", `${x}px`);
+  card.style.setProperty("--mouse-y", `${y}px`);
 });
-
-// ==========================================
-// 6. PORTOFOLIO DENGAN SKELETON & PAGINASI
-// ==========================================
-const portfolioContainer = document.getElementById("portfolio-container");
-const loadMoreBtn = document.getElementById("load-more-btn"); // tombol baru
-const PAGE_SIZE = 6;
-let lastVisibleDoc = null;
-let isLoading = false;
 
 // ==========================================
 // 6. PORTOFOLIO DENGAN INFINITE MARQUEE
 // ==========================================
 function createPortfolioCard(data) {
-    return `
-      <div class="group cursor-pointer bg-brand-navy rounded-2xl overflow-hidden border border-white/5 shadow-2xl transition duration-500 hover:border-brand-cyan/20 hover:shadow-cyan-900/40 relative">
-        
-        <div class="h-64 overflow-hidden relative">
-          <img src="${data.imgUrl}" alt="${data.title}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-          
-          <div class="absolute bottom-3 right-3 bg-brand-cyan/20 backdrop-blur-md px-3 py-1 rounded-xl text-xs text-brand-cyan font-bold shadow-lg">
-            ${data.category}
-          </div>
+  return `
+    <div class="group cursor-pointer bg-brand-navy rounded-2xl overflow-hidden border border-white/5 shadow-2xl transition duration-500 hover:border-brand-cyan/20 hover:shadow-cyan-900/40 relative">
+      <div class="h-64 overflow-hidden relative">
+        <img src="${data.imgUrl}" alt="${data.title}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+        <div class="absolute bottom-3 right-3 bg-brand-cyan/20 backdrop-blur-md px-3 py-1 rounded-xl text-xs text-brand-cyan font-bold shadow-lg">
+          ${data.category}
         </div>
-        
-        <div class="py-4 px-5 flex items-center justify-between gap-4">
-          
-          <h3 class="text-lg font-bold text-white truncate transition group-hover:text-brand-cyan">
-            ${data.title}
-          </h3>
-          
-          <div class="text-brand-cyan text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all duration-300 shrink-0">
-            Lihat Detail <span class="transition-transform group-hover:translate-x-1">→</span>
-          </div>
-          
-        </div>
-        
       </div>
-    `;
+      <div class="py-4 px-5 flex items-center justify-between gap-4">
+        <h3 class="text-lg font-bold text-white truncate transition group-hover:text-brand-cyan">${data.title}</h3>
+        <div class="text-brand-cyan text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all duration-300 shrink-0">
+          Lihat Detail <span class="transition-transform group-hover:translate-x-1">→</span>
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 async function loadPortfolioMarquee() {
-    const col1 = document.getElementById('col-1');
-    const col2 = document.getElementById('col-2');
-    const col3 = document.getElementById('col-3');
-    if (!col1 || !col2 || !col3) return;
+  const col1 = document.getElementById('col-1');
+  const col2 = document.getElementById('col-2');
+  const col3 = document.getElementById('col-3');
+  if (!col1 || !col2 || !col3) return;
 
-    try {
-        // Ambil semua portofolio terbaru dari Firebase
-        const q = query(collection(db, "portfolios"), orderBy("createdAt", "desc"));
-        const snapshot = await getDocs(q);
+  try {
+    const q = query(collection(db, "portfolios"), orderBy("createdAt", "desc"));
+    const snapshot = await getDocs(q);
 
-        if (snapshot.empty) {
-            col1.innerHTML = '<p class="text-gray-400 text-center">Belum ada portofolio.</p>';
-            return;
-        }
-
-        // Variabel penampung data untuk ke-3 kolom
-        let htmlCol1 = '';
-        let htmlCol2 = '';
-        let htmlCol3 = '';
-        let index = 0;
-
-        // Bagi data secara merata (selang-seling) ke 3 kolom
-        snapshot.forEach(doc => {
-            const data = doc.data();
-            const card = createPortfolioCard(data);
-            
-            if (index % 3 === 0) htmlCol1 += card;
-            else if (index % 3 === 1) htmlCol2 += card;
-            else htmlCol3 += card;
-            
-            index++;
-        });
-
-        // TRIK INFINITE SCROLL: Gandakan 2x lipat datanya di dalam kolom yang sama
-        col1.innerHTML = htmlCol1 + htmlCol1;
-        col2.innerHTML = htmlCol2 + htmlCol2;
-        col3.innerHTML = htmlCol3 + htmlCol3;
-
-    } catch (error) {
-        console.error("Gagal memuat portofolio:", error);
+    if (snapshot.empty) {
+      col1.innerHTML = '<p class="text-gray-400 text-center">Belum ada portofolio.</p>';
+      return;
     }
+
+    let htmlCol1 = '';
+    let htmlCol2 = '';
+    let htmlCol3 = '';
+    let index = 0;
+
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      const card = createPortfolioCard(data);
+      if (index % 3 === 0) htmlCol1 += card;
+      else if (index % 3 === 1) htmlCol2 += card;
+      else htmlCol3 += card;
+      index++;
+    });
+
+    col1.innerHTML = htmlCol1 + htmlCol1;
+    col2.innerHTML = htmlCol2 + htmlCol2;
+    col3.innerHTML = htmlCol3 + htmlCol3;
+  } catch (error) {
+    console.error("Gagal memuat portofolio:", error);
+  }
 }
 
-// Fungsi untuk merender array dokumen ke container (tambahan, bukan ganti)
-function renderCards(snapshot) {
-  snapshot.forEach(doc => {
-    const data = doc.data();
-    portfolioContainer.innerHTML += createPortfolioCard(data);
+// ==========================================
+// 7. EFEK PARALLAX SCROLL PORTOFOLIO
+// ==========================================
+function initPortfolioParallax() {
+  const section = document.getElementById('portofolio');
+  if (!section) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.innerWidth < 1024) {
+      document.querySelectorAll('#portfolio-container > div').forEach(card => {
+        card.style.transform = 'translateY(0px)';
+      });
+      return;
+    }
+
+    const rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      const cards = document.querySelectorAll('#portfolio-container > div');
+      let scrollProgress = window.innerHeight - rect.top;
+      cards.forEach((card, index) => {
+        const colIndex = index % 3;
+        const speed = 0.1;
+        card.style.transition = 'transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        if (colIndex === 1) {
+          card.style.transform = `translateY(${scrollProgress * speed}px)`;
+        } else {
+          card.style.transform = `translateY(${scrollProgress * -speed}px)`;
+        }
+      });
+    }
   });
 }
 
-// Fungsi menampilkan skeleton loader
-function showSkeleton(count = 3) {
-  let html = '';
-  for (let i = 0; i < count; i++) {
-    html += `
-      <div class="rounded-xl overflow-hidden bg-brand-navy border border-white/5">
-        <div class="gooey-loader-container" style="--gooey-primary-color: #00b4d8; --gooey-secondary-color: #0A192F; --gooey-border-color: rgba(255,255,255,0.1);"></div>
-        <div class="p-4 space-y-2">
-          <div class="h-4 bg-white/10 rounded w-3/4 animate-pulse"></div>
-          <div class="h-3 bg-white/10 rounded w-1/2 animate-pulse"></div>
-        </div>
-      </div>
-    `;
-  }
-  portfolioContainer.innerHTML = html;
-}
-
-// Fungsi fetch halaman pertama (dipanggil saat load)
-async function loadFirstPortfolio() {
-  if (!portfolioContainer) return;
-  showSkeleton(3); // tampilkan skeleton
-
-  try {
-    const q = query(collection(db, "portfolios"), orderBy("createdAt", "desc"), limit(PAGE_SIZE));
-    const snapshot = await getDocs(q);
-    portfolioContainer.innerHTML = ""; // hapus skeleton
-    if (snapshot.empty) {
-      portfolioContainer.innerHTML = '<p class="text-gray-400 text-center col-span-full">Belum ada portofolio yang diunggah.</p>';
-      if (loadMoreBtn) loadMoreBtn.classList.add("hidden");
-      return;
-    }
-    renderCards(snapshot);
-    lastVisibleDoc = snapshot.docs[snapshot.docs.length - 1];
-    // Jika data kurang dari PAGE_SIZE, sembunyikan tombol
-    if (loadMoreBtn) {
-      if (snapshot.docs.length < PAGE_SIZE) loadMoreBtn.classList.add("hidden");
-      else loadMoreBtn.classList.remove("hidden");
-    }
-  } catch (error) {
-    console.error("Gagal memuat portofolio:", error);
-    portfolioContainer.innerHTML = '<p class="text-red-400 text-center col-span-full">Gagal memuat data portofolio. Periksa koneksi internet.</p>';
-  }
-}
-
-// Fungsi "Muat Lebih Banyak"
-async function loadMorePortfolio() {
-  if (isLoading || !lastVisibleDoc) return;
-  isLoading = true;
-  loadMoreBtn.disabled = true;
-  loadMoreBtn.innerHTML = '<span class="animate-pulse">Memuat...</span>';
-
-  try {
-    const q = query(collection(db, "portfolios"), orderBy("createdAt", "desc"), startAfter(lastVisibleDoc), limit(PAGE_SIZE));
-    const snapshot = await getDocs(q);
-    if (snapshot.empty) {
-      loadMoreBtn.classList.add("hidden");
-      return;
-    }
-    renderCards(snapshot);
-    lastVisibleDoc = snapshot.docs[snapshot.docs.length - 1];
-    if (snapshot.docs.length < PAGE_SIZE) {
-      loadMoreBtn.classList.add("hidden");
-    }
-  } catch (error) {
-    console.error("Gagal memuat lebih banyak:", error);
-    alert("Gagal memuat portofolio tambahan.");
-  } finally {
-    isLoading = false;
-    loadMoreBtn.disabled = false;
-    loadMoreBtn.innerHTML = 'Muat Lebih Banyak';
-  }
-}
-
-// Event listener untuk tombol (jika ada)
-if (loadMoreBtn) {
-  loadMoreBtn.addEventListener("click", loadMorePortfolio);
-}
-
 // ==========================================
-// 8. EFEK PARALLAX SCROLL PORTOFOLIO
-// ==========================================
-function initPortfolioParallax() {
-    const section = document.getElementById('portofolio');
-    
-    window.addEventListener('scroll', () => {
-        // Efek ini hanya bagus di layar Laptop/PC (saat grid menjadi 3 kolom).
-        // Di HP (1 kolom), kita reset agar tampilannya tetap normal dan rapi.
-        if (window.innerWidth < 1024) {
-            document.querySelectorAll('#portfolio-container > div').forEach(card => {
-                card.style.transform = 'translateY(0px)';
-            });
-            return;
-        }
-
-        if (!section) return;
-        
-        // Deteksi posisi area portofolio terhadap layar (viewport)
-        const rect = section.getBoundingClientRect();
-        
-        // Hanya jalankan animasi jika area portofolio sedang terlihat di layar
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-            const cards = document.querySelectorAll('#portfolio-container > div');
-            
-            // Hitung seberapa jauh kita sudah men-scroll area ini
-            let scrollProgress = window.innerHeight - rect.top;
-            
-            cards.forEach((card, index) => {
-                // Tentukan letak kolom (0 = Kiri, 1 = Tengah, 2 = Kanan)
-                const colIndex = index % 3;
-                
-                // Kecepatan gerak (bisa kamu ubah, misal 0.15 jika kurang cepat)
-                const speed = 0.1; 
-                
-                // Tambahkan efek transisi singkat agar pergerakannya sangat mulus (tidak patah-patah)
-                card.style.transition = 'transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-                
-                if (colIndex === 1) {
-                    // KOLOM TENGAH: Bergerak turun ke BAWAH (nilai positif)
-                    card.style.transform = `translateY(${scrollProgress * speed}px)`;
-                } else {
-                    // KOLOM KIRI & KANAN: Bergerak naik ke ATAS (nilai negatif)
-                    card.style.transform = `translateY(${scrollProgress * -speed}px)`;
-                }
-            });
-        }
-    });
-}
-
-// Jalankan saat halaman siap
-window.addEventListener("DOMContentLoaded", () => {
-    loadPortfolioMarquee(); 
-    loadSiteContent();
-    initPortfolioParallax();
-});
-
-// ==========================================
-// 7. MEMUAT KONTEN TEKS DARI FIREBASE (FAQ)
+// 8. MEMUAT SEMUA KONTEN DARI FIREBASE
 // ==========================================
 async function loadSiteContent() {
-    try {
-        // Mengambil dokumen "homepage" dari koleksi "siteContent"
-        const docRef = doc(db, "siteContent", "homepage");
-        const docSnap = await getDoc(docRef);
+  try {
+    const docRef = doc(db, "siteContent", "homepage");
+    const docSnap = await getDoc(docRef);
+    if (!docSnap.exists()) return;
+    const data = docSnap.data();
 
-        if (docSnap.exists()) {
-            const data = docSnap.data();
-            
-            // --- RENDER DATA FAQ ---
-            const faqContainer = document.getElementById("faq-container");
-            if (faqContainer && data.faq && data.faq.length > 0) {
-                faqContainer.innerHTML = ""; // Kosongkan tulisan "Memuat..."
-                
-                // Membagi FAQ menjadi 2 kolom (Kiri dan Kanan) agar desain seimbang
-                let col1HTML = '<div class="space-y-4">';
-                let col2HTML = '<div class="space-y-4">';
-                
-                data.faq.forEach((item, index) => {
-                    const faqHTML = `
-                      <details class="group bg-brand-navy border border-white/5 p-5 rounded-xl cursor-pointer">
-                        <summary class="flex justify-between items-center font-medium list-none outline-none">
-                            <span>${item.q}</span>
-                            <span class="transition group-open:rotate-180 text-brand-cyan text-xl">+</span>
-                        </summary>
-                        <div class="text-gray-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
-                            ${item.a}
-                        </div>
-                      </details>
-                    `;
-                    // Logika membagi item secara selang-seling ke kiri dan kanan
-                    if (index % 2 === 0) col1HTML += faqHTML;
-                    else col2HTML += faqHTML;
-                });
-                
-                col1HTML += '</div>';
-                col2HTML += '</div>';
-                
-                // Gabungkan kedua kolom ke dalam container utama
-                faqContainer.innerHTML = col1HTML + col2HTML;
-            } else if (faqContainer) {
-                faqContainer.innerHTML = '<p class="text-gray-500 text-center col-span-full">Belum ada FAQ yang ditambahkan.</p>';
-            }
-
-            // --- RENDER DATA TECH STACK ---
-            const techContainer = document.getElementById("techstack-marquee");
-            if (techContainer && data.techstack && data.techstack.length > 0) {
-                let techHTML = '<div class="flex items-center gap-16 px-8 min-w-max">';
-                
-                data.techstack.forEach(tech => {
-                    techHTML += `
-                    <div class="flex flex-col items-center gap-3 hover:scale-110 transition">
-                        <i class="${tech.iconClass}"></i>
-                        <span class="text-xs font-semibold text-gray-400">${tech.name}</span>
-                    </div>`;
-                });
-                
-                techHTML += '</div>';
-                
-                // Dimasukkan 2 kali agar animasi marquee mulus dan looping tak terbatas
-                techContainer.innerHTML = techHTML + techHTML;
-            } else if (techContainer) {
-                techContainer.innerHTML = '<p class="text-gray-500 text-center col-span-full w-full">Belum ada teknologi yang ditambahkan di Admin.</p>';
-            }
-            
-        }
-    } catch (error) {
-        console.error("Gagal memuat konten situs:", error);
+    // --- HERO ---
+    if (data.hero) {
+      const hero = data.hero;
+      const titleEl = document.getElementById("hero-title");
+      const subtitleEl = document.getElementById("hero-subtitle");
+      const cta1 = document.getElementById("hero-cta1");
+      const cta2 = document.getElementById("hero-cta2");
+      if (titleEl && hero.titleLine1) {
+        titleEl.innerHTML = `${hero.titleLine1} <br class="hidden md:block" /> ${hero.titleLine2 || ''}`;
+      }
+      if (subtitleEl && hero.subtitle) subtitleEl.textContent = hero.subtitle;
+      if (cta1 && hero.cta1) cta1.textContent = hero.cta1;
+      if (cta2 && hero.cta2) cta2.textContent = hero.cta2;
     }
-} 
+
+    // --- LAYANAN ---
+    const servicesGrid = document.getElementById("services-grid");
+    if (servicesGrid && data.services && data.services.length > 0) {
+      servicesGrid.innerHTML = "";
+      data.services.forEach(svc => {
+        servicesGrid.innerHTML += `
+          <div class="bg-brand-navy p-8 rounded-2xl border border-white/5 hover:border-brand-cyan/30 transition duration-300 group">
+            <div class="w-14 h-14 bg-brand-cyan/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+              <i class="bi ${svc.icon || 'bi-star'} text-2xl text-brand-cyan"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">${svc.title || ''}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">${svc.desc || ''}</p>
+          </div>
+        `;
+      });
+    }
+
+    // --- TECH STACK ---
+    const techContainer = document.getElementById("techstack-marquee");
+    if (techContainer && data.techstack && data.techstack.length > 0) {
+      let techHTML = '<div class="flex items-center gap-16 px-8 min-w-max flex-shrink-0">';
+      data.techstack.forEach(tech => {
+        techHTML += `
+          <div class="flex flex-col items-center gap-3 hover:scale-110 transition">
+            <i class="${tech.iconClass}"></i>
+            <span class="text-xs font-semibold text-gray-400">${tech.name}</span>
+          </div>`;
+      });
+      techHTML += '</div>';
+      techContainer.innerHTML = techHTML + techHTML;
+    } else if (techContainer) {
+      techContainer.innerHTML = '<p class="text-gray-500 text-center col-span-full w-full">Belum ada teknologi yang ditambahkan di Admin.</p>';
+    }
+
+    // --- HARGA ---
+    const pricingGrid = document.getElementById("pricing-grid");
+    if (pricingGrid && data.pricing && data.pricing.length > 0) {
+      pricingGrid.innerHTML = "";
+      data.pricing.forEach((p, idx) => {
+        const isPopular = idx === 1;
+        const featuresHTML = (p.features || []).map(f => `<li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> ${f}</li>`).join('');
+        pricingGrid.innerHTML += `
+          <div class="glass-card glow-card rounded-2xl p-8 max-w-sm w-full transition duration-300 hover:border-brand-cyan/50 ${isPopular ? 'scale-105 border-brand-cyan/30 ring-2 ring-brand-cyan/20 relative shadow-2xl' : ''}">
+            ${isPopular ? '<div class="absolute -top-4 right-6 bg-brand-cyan text-brand-dark px-4 py-1.5 text-xs font-bold rounded-full z-20 shadow-lg">Most Popular</div>' : ''}
+            <h3 class="text-4xl font-light text-white mb-2">${p.name || 'Paket'}</h3>
+            <p class="text-gray-400 text-sm mb-6">${p.desc || ''}</p>
+            <div class="flex items-baseline gap-2 mb-6"><span class="text-5xl font-light">Rp ${(Number(p.price) || 0).toLocaleString('id-ID')}</span><span class="text-sm text-gray-400">${p.unit || ''}</span></div>
+            <div class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent w-full mb-6"></div>
+            <ul class="space-y-3 text-gray-300 text-sm mb-8">${featuresHTML}</ul>
+            <button class="w-full py-3 rounded-xl font-semibold bg-white/10 hover:bg-white/20 text-white transition border border-white/20">${isPopular ? 'Pilih Paket' : 'Mulai'}</button>
+          </div>
+        `;
+      });
+    }
+
+    // --- TESTIMONI ---
+    const testiHeading = document.querySelector('#testimoni h2');
+    const testiSub = document.querySelector('#testimoni p.text-gray-400');
+    if (testiHeading && data.testimonialsHeading) testiHeading.textContent = data.testimonialsHeading;
+    if (testiSub && data.testimonialsSubheading) testiSub.textContent = data.testimonialsSubheading;
+
+    if (data.testimonials && data.testimonials.length > 0) {
+      testimonialsData = data.testimonials.map((t, idx) => ({ id: idx + 1, text: t.text, by: t.by, img: t.img }));
+      currentList = [...testimonialsData];
+      initTestimonials();
+    } else {
+      if (testimonialContainer) testimonialContainer.innerHTML = '';
+    }
+
+    // --- FAQ ---
+    const faqContainer = document.getElementById("faq-container");
+    if (faqContainer && data.faq && data.faq.length > 0) {
+      faqContainer.innerHTML = "";
+      let col1HTML = '<div class="space-y-4">';
+      let col2HTML = '<div class="space-y-4">';
+      data.faq.forEach((item, index) => {
+        const faqHTML = `
+          <details class="group bg-brand-navy border border-white/5 p-5 rounded-xl cursor-pointer">
+            <summary class="flex justify-between items-center font-medium list-none outline-none">
+              <span>${item.q}</span>
+              <span class="transition group-open:rotate-180 text-brand-cyan text-xl">+</span>
+            </summary>
+            <div class="text-gray-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">${item.a}</div>
+          </details>
+        `;
+        if (index % 2 === 0) col1HTML += faqHTML;
+        else col2HTML += faqHTML;
+      });
+      col1HTML += '</div>';
+      col2HTML += '</div>';
+      faqContainer.innerHTML = col1HTML + col2HTML;
+    } else if (faqContainer) {
+      faqContainer.innerHTML = '<p class="text-gray-500 text-center col-span-full">Belum ada FAQ yang ditambahkan.</p>';
+    }
+
+    // --- KONTAK ---
+    if (data.contact) {
+      const c = data.contact;
+
+      const heading = document.getElementById("contact-heading");
+      const subtext = document.getElementById("contact-subtext");
+      if (heading && c.heading) heading.textContent = c.heading;
+      if (subtext && c.subtext) subtext.textContent = c.subtext;
+
+      const waLink = document.getElementById("contact-wa-link");
+      if (waLink && c.waNumber) {
+        waLink.href = `https://wa.me/${c.waNumber}`;
+        waLink.innerHTML = `<i class="bi bi-whatsapp text-2xl"></i> ${c.waMessage || 'Chat via WhatsApp'}`;
+      }
+
+      const navbarWa = document.getElementById("navbar-wa-btn");
+      if (navbarWa && c.waNumber) {
+        navbarWa.href = `https://wa.me/${c.waNumber}`;
+      }
+
+      const floatingWa = document.getElementById("floating-wa-btn");
+      const floatingWaText = document.getElementById("floating-wa-text");
+      if (floatingWa && c.waNumber) {
+        floatingWa.href = `https://wa.me/${c.waNumber}`;
+      }
+      if (floatingWaText) {
+        const deco = floatingWaText.querySelector('span');
+        floatingWaText.innerHTML = '';
+        floatingWaText.appendChild(document.createTextNode(c.waMessage || 'Chat Kami!'));
+        if (deco) floatingWaText.appendChild(deco);
+      }
+    }
+
+  } catch (error) {
+    console.error("Gagal memuat konten situs:", error);
+  }
+}
+
+// ==========================================
+// STARTUP
+// ==========================================
+window.addEventListener("DOMContentLoaded", () => {
+  loadPortfolioMarquee();
+  loadSiteContent();
+  initPortfolioParallax();
+}); 
  
