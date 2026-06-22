@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel | CodeSya STUDIO</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { brand: { dark: '#050B14', navy: '#0A192F', cyan: '#00b4d8' } } } }
+    }
+  </script>
+</head>
+<body class="bg-brand-dark text-white font-sans antialiased min-h-screen">
+  <div id="app" class="flex min-h-screen">
+    <!-- Sidebar -->
+   <aside class="w-64 bg-brand-navy p-6 border-r border-white/10 flex flex-col">
+      <div class="text-2xl font-bold mb-10">Code<span class="text-brand-cyan">Sya</span> <span class="text-xs bg-brand-cyan/20 text-brand-cyan px-2 py-1 rounded ml-2">ADMIN</span></div>
+      <nav class="flex flex-col gap-2" id="sidebar-nav">
+        <button data-tab="hero" class="tab-btn text-left px-4 py-2 rounded hover:bg-white/5 transition">🏠 Hero</button>
+        <button data-tab="services" class="tab-btn text-left px-4 py-2 rounded hover:bg-white/5 transition">💼 Layanan</button>
+        <button data-tab="techstack" class="tab-btn text-left px-4 py-2 rounded hover:bg-white/5 transition">⚙️ Tech Stack</button>
+        <button data-tab="pricing" class="tab-btn text-left px-4 py-2 rounded hover:bg-white/5 transition">💰 Harga</button>
+        <button data-tab="testimonials" class="tab-btn text-left px-4 py-2 rounded hover:bg-white/5 transition">⭐ Testimoni</button>
+        <button data-tab="faq" class="tab-btn text-left px-4 py-2 rounded hover:bg-white/5 transition">❓ FAQ</button>
+        <button data-tab="contact" class="tab-btn text-left px-4 py-2 rounded hover:bg-white/5 transition">📞 Kontak</button>
+        <button data-tab="portfolio" class="tab-btn text-left px-4 py-2 rounded hover:bg-white/5 transition">🖼️ Portofolio</button>
+        <button id="btn-logout" class="mt-8 text-left px-4 py-2 rounded text-red-400 hover:bg-red-400/10 transition">🚪 Logout</button>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 md:p-10">
+      <!-- Login Screen -->
+      <div id="login-screen" class="max-w-md mx-auto mt-20 bg-brand-navy p-8 rounded-2xl border border-white/10">
+        <h2 class="text-xl font-semibold mb-6">Login Admin</h2>
+        <input type="email" id="login-email" placeholder="Email" class="w-full bg-brand-dark border border-white/10 rounded-lg px-4 py-2.5 mb-4 text-white focus:outline-none focus:border-brand-cyan" />
+        <input type="password" id="login-password" placeholder="Password" class="w-full bg-brand-dark border border-white/10 rounded-lg px-4 py-2.5 mb-6 text-white focus:outline-none focus:border-brand-cyan" />
+        <button id="btn-login" class="w-full bg-brand-cyan text-brand-dark font-bold py-3 rounded-lg hover:bg-cyan-300 transition">Masuk</button>
+        <p id="login-error" class="text-red-400 text-sm mt-3 hidden">Email atau password salah.</p>
+      </div>
+
+      <!-- Dashboard (hidden before login) -->
+      <div id="dashboard" class="hidden">
+        <!-- Tab content will be injected here -->
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

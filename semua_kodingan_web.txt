@@ -1,0 +1,1611 @@
+============================== 
+FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\admin.html 
+============================== 
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel | CodeSya STUDIO</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { brand: { dark: '#050B14', navy: '#0A192F', cyan: '#00b4d8' } } } }
+    }
+  </script>
+</head>
+<body class="bg-brand-dark text-white font-sans antialiased min-h-screen">
+  <div id="app" class="flex min-h-screen">
+    <!-- Sidebar -->
+   <aside class="w-64 bg-brand-navy p-6 border-r border-white/10 flex flex-col">
+      <div class="text-2xl font-bold mb-10">Code<span class="text-brand-cyan">Sya</span> <span class="text-xs bg-brand-cyan/20 text-brand-cyan px-2 py-1 rounded ml-2">ADMIN</span></div>
+      <nav class="flex flex-col gap-2" id="sidebar-nav">
+        <button data-tab="hero" class="tab-btn text-left px-4 py-2 rounded hover:bg-white/5 transition">🏠 Hero</button>
+        <button data-tab="services" class="tab-btn text-left px-4 py-2 rounded hover:bg-white/5 transition">💼 Layanan</button>
+        <button data-tab="techstack" class="tab-btn text-left px-4 py-2 rounded hover:bg-white/5 transition">⚙️ Tech Stack</button>
+        <button data-tab="pricing" class="tab-btn text-left px-4 py-2 rounded hover:bg-white/5 transition">💰 Harga</button>
+        <button data-tab="testimonials" class="tab-btn text-left px-4 py-2 rounded hover:bg-white/5 transition">⭐ Testimoni</button>
+        <button data-tab="faq" class="tab-btn text-left px-4 py-2 rounded hover:bg-white/5 transition">❓ FAQ</button>
+        <button data-tab="contact" class="tab-btn text-left px-4 py-2 rounded hover:bg-white/5 transition">📞 Kontak</button>
+        <button data-tab="portfolio" class="tab-btn text-left px-4 py-2 rounded hover:bg-white/5 transition">🖼️ Portofolio</button>
+        <button id="btn-logout" class="mt-8 text-left px-4 py-2 rounded text-red-400 hover:bg-red-400/10 transition">🚪 Logout</button>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 md:p-10">
+      <!-- Login Screen -->
+      <div id="login-screen" class="max-w-md mx-auto mt-20 bg-brand-navy p-8 rounded-2xl border border-white/10">
+        <h2 class="text-xl font-semibold mb-6">Login Admin</h2>
+        <input type="email" id="login-email" placeholder="Email" class="w-full bg-brand-dark border border-white/10 rounded-lg px-4 py-2.5 mb-4 text-white focus:outline-none focus:border-brand-cyan" />
+        <input type="password" id="login-password" placeholder="Password" class="w-full bg-brand-dark border border-white/10 rounded-lg px-4 py-2.5 mb-6 text-white focus:outline-none focus:border-brand-cyan" />
+        <button id="btn-login" class="w-full bg-brand-cyan text-brand-dark font-bold py-3 rounded-lg hover:bg-cyan-300 transition">Masuk</button>
+        <p id="login-error" class="text-red-400 text-sm mt-3 hidden">Email atau password salah.</p>
+      </div>
+
+      <!-- Dashboard (hidden before login) -->
+      <div id="dashboard" class="hidden">
+        <!-- Tab content will be injected here -->
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html> 
+ 
+============================== 
+FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\index.html 
+============================== 
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeSya Studio | Jasa Pembuatan Website Profesional</title>
+
+    <link rel="icon" href="logo.png" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: { dark: "#050B14", navy: "#0A192F", cyan: "#00b4d8" },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Inter", "sans-serif"],
+            },
+            // --- KODE ANIMASI BARU DITAMBAHKAN DI SINI ---
+            animation: {
+              marquee: "marquee 25s linear infinite",
+              'marquee-up': 'marqueeUp 30s linear infinite',
+              'marquee-down': 'marqueeDown 30s linear infinite',
+            },
+            keyframes: {
+              marquee: {
+                "0%": { transform: "translateX(0%)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+              marqueeUp: {
+                "0%": { transform: "translateY(0%)" },
+                "100%": { transform: "translateY(-50%)" },
+              },
+              marqueeDown: {
+                "0%": { transform: "translateY(-50%)" },
+                "100%": { transform: "translateY(0%)" },
+              },
+            },
+            // ----------------------------------------------
+          },
+        },
+      };
+    </script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-brand-dark text-white font-sans antialiased overflow-x-hidden relative"
+  >
+
+  <canvas id="shader-canvas"></canvas>
+
+  <svg class="absolute w-0 h-0">
+    <defs>
+      <filter id="gooey-loader-filter">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur" />
+        <feColorMatrix
+          in="blur"
+          mode="matrix"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 48 -7"
+          result="goo"
+        />
+        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+      </filter>
+    </defs>
+  </svg>
+
+    <nav
+      id="navbar"
+      class="fixed z-50 top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl transition-all duration-300 bg-white/5 backdrop-blur-lg border border-white/10 rounded-full px-6 md:px-8 py-2 shadow-2xl shadow-black/50"
+    >
+      <div class="flex justify-between items-center h-14">
+        <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+          <img
+            src="logo.png"
+            alt="Logo CodeSya"
+            class="h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
+          />
+          <span
+            class="text-xl md:text-2xl font-bold tracking-tight text-white hidden sm:block"
+          >
+            Code<span class="text-brand-cyan">Sya</span>
+          </span>
+        </div>
+
+        <div
+          class="hidden md:flex space-x-8 items-center absolute left-1/2 -translate-x-1/2"
+        >
+          <a
+            href="#beranda"
+            class="text-gray-300 hover:text-white text-sm font-medium transition"
+            >Beranda</a
+          >
+          <a
+            href="#layanan"
+            class="text-gray-300 hover:text-white text-sm font-medium transition"
+            >Layanan</a
+          >
+          <a
+            href="#portofolio"
+            class="text-gray-300 hover:text-white text-sm font-medium transition"
+            >Portofolio</a
+          >
+          <a
+            href="#harga"
+            class="text-gray-300 hover:text-white text-sm font-medium transition"
+            >Harga</a
+          >
+        </div>
+
+        <div class="hidden md:flex">
+          <a
+            href="#kontak"
+            class="bg-brand-cyan text-brand-dark px-5 py-2.5 rounded-full font-bold text-sm hover:bg-white transition flex items-center gap-2 shadow-[0_0_15px_rgba(0,180,216,0.3)]"
+          >
+            WhatsApp Kami <i class="bi bi-whatsapp text-base"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      id="beranda"
+      class="pt-32 pb-20 md:pt-40 md:pb-28 px-4 relative flex items-center min-h-screen"
+    >
+      <div
+        class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-brand-cyan/20 rounded-full blur-[120px] -z-10 pointer-events-none"
+      ></div>
+      <div class="max-w-5xl mx-auto text-center w-full">
+        <h1
+          class="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight"
+        >
+          Bikin Bisnismu Go Digital <br class="hidden md:block" />
+          dengan
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-blue-500"
+            >Website Profesional</span
+          >
+        </h1>
+        <p
+          class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
+        >
+          Tingkatkan kredibilitas dan raih lebih banyak pelanggan. Kami
+          merancang website yang cepat, modern, dan siap menaikkan omset
+          bisnismu.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="#harga"
+            class="bg-brand-cyan text-brand-dark px-8 py-4 rounded-full font-semibold hover:bg-white transition text-lg"
+            >Mulai Proyekmu</a
+          >
+          <a
+            href="#portofolio"
+            class="bg-transparent border border-white/20 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition text-lg"
+            >Lihat Portofolio</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 border-y border-white/10 bg-white/5 overflow-hidden">
+      <div class="max-w-7xl mx-auto text-center mb-10">
+        <p class="text-sm text-gray-400 font-medium tracking-widest uppercase">Teknologi yang Kami Gunakan</p>
+      </div>
+      <div id="techstack-marquee" class="flex w-max animate-marquee hover:[animation-play-state:paused] transition duration-500">
+        <p class="text-brand-cyan animate-pulse px-8 text-center col-span-full">Memuat teknologi...</p>
+      </div>
+    </section>
+    
+    <section id="layanan" class="py-24 px-4 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-semibold mb-4">Layanan <span class="text-brand-cyan">Terbaik</span> Kami</h2>
+                <p class="text-gray-400 text-lg">Solusi digital tepat guna untuk berbagai kebutuhan bisnismu.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-brand-navy p-8 rounded-2xl border border-white/5 hover:border-brand-cyan/30 transition duration-300 group">
+                    <div class="w-14 h-14 bg-brand-cyan/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i class="bi bi-laptop text-2xl text-brand-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Landing Page</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Satu halaman fokus untuk promosi produk atau jasa dengan tingkat konversi tinggi.</p>
+                </div>
+                <div class="bg-brand-navy p-8 rounded-2xl border border-white/5 hover:border-brand-cyan/30 transition duration-300 group">
+                    <div class="w-14 h-14 bg-brand-cyan/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i class="bi bi-building text-2xl text-brand-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Company Profile</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Tingkatkan kredibilitas perusahaan dengan website profil yang elegan dan informatif.</p>
+                </div>
+                <div class="bg-brand-navy p-8 rounded-2xl border border-white/5 hover:border-brand-cyan/30 transition duration-300 group">
+                    <div class="w-14 h-14 bg-brand-cyan/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i class="bi bi-cart3 text-2xl text-brand-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Toko Online (E-Commerce)</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Jangkau pembeli di seluruh Indonesia dengan sistem belanja otomatis 24 jam.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portofolio" class="py-24 px-4 relative z-10">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-semibold mb-4">Karya <span class="text-brand-cyan">Unggulan</span></h2>
+                <p class="text-gray-400 text-lg">Beberapa proyek menakjubkan yang telah kami selesaikan.</p>
+            </div>
+            
+            <div class="h-[600px] md:h-[800px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_5%,black_95%,transparent)]">
+                
+                <div id="portfolio-container" class="grid grid-cols-1 md:grid-cols-3 gap-8 h-full">
+                    
+                    <div class="overflow-hidden h-full flex flex-col group">
+                        <div id="col-1" class="flex flex-col gap-8 animate-marquee-up group-hover:[animation-play-state:paused]">
+                            </div>
+                    </div>
+                    
+                    <div class="overflow-hidden h-full flex flex-col hidden md:flex group">
+                        <div id="col-2" class="flex flex-col gap-8 animate-marquee-down group-hover:[animation-play-state:paused]">
+                            </div>
+                    </div>
+                    
+                    <div class="overflow-hidden h-full flex flex-col hidden md:flex group">
+                        <div id="col-3" class="flex flex-col gap-8 animate-marquee-up group-hover:[animation-play-state:paused]">
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-4">
+        <!-- Cara Kerja (tetap) -->
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-semibold mb-4">Cara <span class="text-brand-cyan">Kerja</span> Kami</h2>
+                <p class="text-gray-400 text-lg">Proses transparan dan efisien dari ide hingga rilis.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <div class="hidden md:block absolute top-8 left-[12.5%] w-[75%] h-[2px] bg-white/10 z-0"></div>
+                <div class="text-center relative z-10">
+                    <div class="w-16 h-16 mx-auto bg-brand-dark border-2 border-brand-cyan text-brand-cyan rounded-full flex items-center justify-center text-2xl font-bold mb-4 shadow-[0_0_15px_rgba(0,180,216,0.2)]">1</div>
+                    <h3 class="font-semibold text-lg mb-2">Diskusi & Ide</h3>
+                    <p class="text-sm text-gray-400">Menganalisa kebutuhan dan target bisnismu.</p>
+                </div>
+                <div class="text-center relative z-10 group">
+                    <div class="w-16 h-16 mx-auto bg-brand-dark border-2 border-white/20 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 group-hover:border-brand-cyan group-hover:text-brand-cyan transition duration-300">2</div>
+                    <h3 class="font-semibold text-lg mb-2">Desain UI/UX</h3>
+                    <p class="text-sm text-gray-400">Membuat mockup visual yang menarik.</p>
+                </div>
+                <div class="text-center relative z-10 group">
+                    <div class="w-16 h-16 mx-auto bg-brand-dark border-2 border-white/20 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 group-hover:border-brand-cyan group-hover:text-brand-cyan transition duration-300">3</div>
+                    <h3 class="font-semibold text-lg mb-2">Development</h3>
+                    <p class="text-sm text-gray-400">Proses coding dengan teknologi modern.</p>
+                </div>
+                <div class="text-center relative z-10 group">
+                    <div class="w-16 h-16 mx-auto bg-brand-dark border-2 border-white/20 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 group-hover:border-brand-cyan group-hover:text-brand-cyan transition duration-300">4</div>
+                    <h3 class="font-semibold text-lg mb-2">Testing & Launch</h3>
+                    <p class="text-sm text-gray-400">Website siap diakses oleh pelangganmu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="harga" class="py-24 px-4 relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-light mb-4">Temukan <span class="text-brand-cyan font-semibold">Paket Sempurna</span> untuk Bisnismu</h2>
+                <p class="text-gray-400 text-lg">Mulai gratis, lalu kembangkan. Paket fleksibel untuk semua proyek.</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+                <!-- Kartu Basic, Team, Agency tetap sama -->
+                <div class="glass-card glow-card rounded-2xl p-8 max-w-sm w-full transition duration-300 hover:border-brand-cyan/50">
+                    <h3 class="text-4xl font-light text-white mb-2">Basic</h3>
+                    <p class="text-gray-400 text-sm mb-6">Sempurna untuk personal project & hobbyist.</p>
+                    <div class="flex items-baseline gap-2 mb-6"><span class="text-5xl font-light">$0</span><span class="text-sm text-gray-400">/mo</span></div>
+                    <div class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent w-full mb-6"></div>
+                    <ul class="space-y-3 text-gray-300 text-sm mb-8">
+                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> 1 User</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> 1GB Storage</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> Community Forum</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-xl font-semibold bg-white/10 hover:bg-white/20 text-white transition border border-white/20">Get Started</button>
+                </div>
+
+                <div class="glass-card glow-card rounded-2xl p-8 max-w-sm w-full scale-105 border-brand-cyan/30 ring-2 ring-brand-cyan/20 relative shadow-2xl">
+                    <div class="absolute -top-4 right-6 bg-brand-cyan text-brand-dark px-4 py-1.5 text-xs font-bold rounded-full z-20 shadow-lg">Most Popular</div>
+                    <h3 class="text-4xl font-light text-white mb-2">Team</h3>
+                    <p class="text-gray-400 text-sm mb-6">Kolaborasi tim untuk beberapa proyek.</p>
+                    <div class="flex items-baseline gap-2 mb-6"><span class="text-5xl font-light">$49</span><span class="text-sm text-gray-400">/mo</span></div>
+                    <div class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent w-full mb-6"></div>
+                    <ul class="space-y-3 text-gray-300 text-sm mb-8">
+                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> 10 Users</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> 100GB Storage</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> Email Support</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-xl font-semibold bg-brand-cyan hover:bg-cyan-300 text-brand-dark transition relative z-10">Choose Team Plan</button>
+                </div>
+
+                <div class="glass-card glow-card rounded-2xl p-8 max-w-sm w-full transition duration-300 hover:border-brand-cyan/50">
+                    <h3 class="text-4xl font-light text-white mb-2">Agency</h3>
+                    <p class="text-gray-400 text-sm mb-6">Manajemen semua klien dalam satu atap.</p>
+                    <div class="flex items-baseline gap-2 mb-6"><span class="text-5xl font-light">$149</span><span class="text-sm text-gray-400">/mo</span></div>
+                    <div class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent w-full mb-6"></div>
+                    <ul class="space-y-3 text-gray-300 text-sm mb-8">
+                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> Unlimited Users</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> 1TB Storage</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-cyan">✔</span> Dedicated Support</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-xl font-semibold bg-brand-cyan hover:bg-cyan-300 text-brand-dark transition relative z-10">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white/5 relative overflow-hidden" id="testimoni">
+      <div class="max-w-4xl mx-auto text-center mb-8 relative z-10">
+        <h2 class="text-3xl md:text-5xl font-semibold mb-4">Apa Kata Klien Kami?</h2>
+        <p class="text-gray-400 text-lg">Kepercayaan mereka adalah pencapaian terbesar kami.</p>
+      </div>
+      <div id="testimonial-container" class="relative w-full h-[500px] flex justify-center items-center overflow-hidden"></div>
+      <div class="flex justify-center gap-4 mt-4 relative z-20">
+        <button id="btn-prev-testi" class="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 hover:bg-brand-cyan hover:text-brand-dark transition">←</button>
+        <button id="btn-next-testi" class="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 hover:bg-brand-cyan hover:text-brand-dark transition">→</button>
+      </div>
+    </section>
+
+    <section id="faq" class="py-24 px-4 max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-sm text-brand-cyan font-medium tracking-wide mb-2 uppercase">Bantuan & Informasi</p>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-6">Pertanyaan yang Sering Diajukan</h2>
+        <p class="text-gray-400 max-w-xl mx-auto">Dapatkan jawaban instan tentang layanan, proses setup, dan harga pembuatan website.</p>
+      </div>
+      
+      <div id="faq-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+         <p class="text-brand-cyan animate-pulse col-span-full text-center">Memuat FAQ...</p>
+      </div>
+    </section>
+
+    <section id="kontak" class="py-24 px-4 bg-gradient-to-b from-brand-dark to-brand-navy border-t border-white/5">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Siap Membangun Kehadiran Digital Anda?</h2>
+        <p class="text-xl text-gray-400 mb-10">Jangan biarkan kompetitormu mendahului. Hubungi kami sekarang dan mari diskusikan proyek impianmu.</p>
+        <a href="https://wa.me/6285735828392" target="_blank" class="inline-flex items-center gap-3 bg-brand-cyan text-brand-dark px-10 py-4 rounded-full font-bold text-lg hover:bg-white transition shadow-[0_0_20px_rgba(0,180,216,0.5)]"><i class="bi bi-whatsapp text-2xl"></i> Chat via WhatsApp</a>
+      </div>
+    </section>
+
+    <footer class="bg-brand-dark pt-16 pb-8 border-t border-white/10 px-4">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4"><img src="logo.png" alt="Logo CodeSya" class="h-10 w-auto object-contain"/><span class="text-2xl font-bold tracking-tight text-white">Code<span class="text-brand-cyan">Sya</span></div>
+          <p class="text-gray-400 text-sm max-w-sm leading-relaxed">Mitra terpercaya untuk membangun identitas digital bisnis Anda. Kami menciptakan website yang menggabungkan estetika desain dan performa tinggi.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-white">Layanan</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-brand-cyan transition">Landing Page</a></li>
+            <li><a href="#" class="hover:text-brand-cyan transition">Company Profile</a></li>
+            <li><a href="#" class="hover:text-brand-cyan transition">E-Commerce</a></li>
+            <li><a href="#" class="hover:text-brand-cyan transition">Custom Web App</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-white">Hubungi Kami</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li>hello@codesyastudio.com</li>
+            <li>Malang, Jawa Timur, Indonesia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+        <p>&copy; 2026 CodeSya Studio. All rights reserved.</p>
+        <div class="flex gap-4 text-lg">
+          <a href="#" class="hover:text-brand-cyan transition"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="hover:text-brand-cyan transition"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="hover:text-brand-cyan transition"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/6285735828392" target="_blank" class="fixed bottom-6 right-6 z-[100] bg-[#25D366] text-white w-14 h-14 rounded-full shadow-lg shadow-[#25D366]/30 flex items-center justify-center hover:scale-110 transition duration-300 group cursor-pointer">
+      <i class="bi bi-whatsapp text-3xl"></i>
+      <span class="absolute right-16 bg-white text-gray-800 text-sm font-semibold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none whitespace-nowrap shadow-md">Chat Kami!<span class="absolute top-1/2 -right-1 -translate-y-1/2 w-2 h-2 bg-white rotate-45"></span></span>
+    </a>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html> 
+ 
+============================== 
+FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\style.css 
+============================== 
+/* =========================================
+   CUSTOM STYLES UNTUK CODESYA STUDIO
+   ========================================= */
+
+/* 1. Kustomisasi Scrollbar agar lebih elegan */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #050B14; /* Warna brand-dark */
+}
+::-webkit-scrollbar-thumb {
+    background: #0A192F; /* Warna brand-navy */
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #00b4d8; /* Warna brand-cyan */
+}
+
+/* 2. Efek Glassmorphism (Digunakan di Pricing & FAQ) */
+.glass-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px); /* Dukungan untuk Safari */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 3. Menghilangkan Panah Bawaan Browser pada FAQ Accordion */
+details > summary {
+    list-style: none;
+}
+details > summary::-webkit-details-marker {
+    display: none;
+}
+
+/* 4. Gaya Dasar Kartu Testimoni (Staggered Carousel) */
+.testi-card {
+    clip-path: polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0 100%, 0 0);
+    /* Menggunakan transition transform dan opacity selama 600ms dengan efek cubic-bezier agar mirip React */
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.4s, border-color 0.4s, color 0.4s, box-shadow 0.4s;
+    will-change: transform;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 2px solid;
+    padding: 2rem;
+    cursor: pointer;
+}
+
+/* State ketika Kartu Testimoni Berada di Tengah (Aktif) */
+.testi-card.active {
+    z-index: 10;
+    background-color: #00b4d8; /* Warna Cyan */
+    color: #050B14; /* Teks Gelap */
+    border-color: #00b4d8;
+    box-shadow: 0px 8px 0px 4px rgba(255, 255, 255, 0.1);
+}
+
+/* State ketika Kartu Testimoni Berada di Samping (Tidak Aktif) */
+.testi-card.inactive {
+    z-index: 0;
+    background-color: #0A192F; /* Warna Navy */
+    color: white;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.testi-card.inactive:hover {
+    border-color: rgba(0, 180, 216, 0.5); /* Hover border cyan */
+}
+
+/* Garis dekoratif kecil bersudut 45 derajat di dalam kartu testimoni */
+.testi-deco-line {
+    position: absolute;
+    display: block;
+    transform-origin: top right;
+    transform: rotate(45deg);
+    background-color: inherit; /* Akan menyesuaikan dengan warna border via JS */
+    right: -2px;
+    top: 48px;
+    width: 70.71px; /* Akar kuadrat dari 5000 */
+    height: 2px;
+}
+
+/* --- ANIMASI TAMBAHAN UNTUK HARGA & TESTIMONI --- */
+
+/* Posisi Kanvas untuk Animasi Lingkaran WebGL */
+#shader-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: -2; /* Berada di paling belakang */
+    pointer-events: none; /* Agar tidak menghalangi klik pada tombol/kartu */
+    opacity: 0.7; /* Membuat animasinya soft/halus */
+}
+
+/* Efek Klik Riak Air (Ripple Effect) pada Tombol */
+.ripple-btn {
+    position: relative;
+    overflow: hidden;
+    isolate: transform;
+}
+
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* --- ANIMASI GLOW SPOTLIGHT PADA KARTU HARGA --- */
+.glow-card {
+    position: relative;
+    /* overflow: hidden; DIHAPUS agar label "Most Popular" tidak terpotong */
+}
+
+/* Membuat elemen "lampu sorot" transparan */
+.glow-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* DITAMBAHKAN agar cahaya mengikuti sudut membulat kartu */
+    /* Gradient radial yang akan digerakkan oleh JavaScript */
+    background: radial-gradient(
+        600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+        rgba(0, 180, 216, 0.15), /* Warna cyan redup */
+        transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Agar tidak menghalangi kursor saat mengklik tombol */
+    z-index: 0;
+}
+
+/* Tampilkan lampu saat kursor masuk ke kartu */
+.glow-card:hover::before {
+    opacity: 1;
+}
+
+/* Pastikan konten kartu (teks, tombol) berada di atas lampu sorot */
+.glow-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Gooey Skeleton Loader */
+.gooey-loader-container {
+  width: 100%;
+  height: 200px; /* bisa disesuaikan */
+  position: relative;
+  overflow: hidden;
+  border-bottom: 6px solid var(--gooey-border-color);
+  filter: url(#gooey-loader-filter);
+  background-color: #0A192F; /* navy fallback */
+}
+
+.gooey-loader-container::before,
+.gooey-loader-container::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.gooey-loader-container::before {
+  width: 22em;
+  height: 18em;
+  background-color: var(--gooey-primary-color);
+  left: -2em;
+  bottom: -18em;
+  animation: gooey-wee1 2s linear infinite;
+}
+
+.gooey-loader-container::after {
+  width: 16em;
+  height: 12em;
+  background-color: var(--gooey-secondary-color);
+  left: -4em;
+  bottom: -12em;
+  animation: gooey-wee2 2s linear infinite 0.75s;
+}
+
+@keyframes gooey-wee1 {
+  0% { transform: translateX(-10em) rotate(0deg); }
+  100% { transform: translateX(7em) rotate(180deg); }
+}
+
+@keyframes gooey-wee2 {
+  0% { transform: translateX(-8em) rotate(0deg); }
+  100% { transform: translateX(8em) rotate(180deg); }
+} 
+ 
+============================== 
+FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\admin.js 
+============================== 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  collection,
+  addDoc,
+  getDocs,
+  orderBy,
+  query,
+  serverTimestamp,
+  deleteDoc,
+} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD2O5Wjt-0Pn_y9naFsvS3iAwoyeWPqIQQ",
+  authDomain: "codesya-studio.firebaseapp.com",
+  projectId: "codesya-studio",
+  storageBucket: "codesya-studio.firebasestorage.app",
+  messagingSenderId: "846215546817",
+  appId: "1:846215546817:web:1d2b8dac64cfe596bc9140",
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+// ---------- AUTH ----------
+const loginScreen = document.getElementById("login-screen");
+const dashboard = document.getElementById("dashboard");
+const loginError = document.getElementById("login-error");
+
+document.getElementById("btn-login").addEventListener("click", async () => {
+  const email = document.getElementById("login-email").value.trim();
+  const password = document.getElementById("login-password").value;
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+  } catch (err) {
+    loginError.textContent = "Login gagal: " + err.message;
+    loginError.classList.remove("hidden");
+  }
+});
+
+document
+  .getElementById("btn-logout")
+  .addEventListener("click", () => signOut(auth));
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    loginScreen.classList.add("hidden");
+    dashboard.classList.remove("hidden");
+    loadSiteData();
+  } else {
+    loginScreen.classList.remove("hidden");
+    dashboard.classList.add("hidden");
+  }
+});
+
+// ---------- DATA LOADER ----------
+let siteData = {
+  hero: { titleLine1: "", titleLine2: "", subtitle: "", cta1: "", cta2: "" },
+  services: [],
+  techstack: [],
+  pricing: [],
+  testimonials: [],
+  faq: [],
+  contact: { heading: "", subtext: "", waNumber: "", waMessage: "" },
+};
+
+async function loadSiteData() {
+  const docRef = doc(db, "siteContent", "homepage");
+  const snap = await getDoc(docRef);
+  if (snap.exists()) {
+    siteData = { ...siteData, ...snap.data() };
+  } else {
+    await setDoc(docRef, siteData);
+  }
+  renderCurrentTab();
+}
+
+// ---------- TAB NAVIGATION ----------
+let currentTab = "hero";
+document.querySelectorAll(".tab-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    currentTab = btn.dataset.tab;
+    renderCurrentTab();
+  });
+});
+
+function renderCurrentTab() {
+  const container = dashboard;
+  let html = `<h2 class="text-2xl font-semibold mb-8 capitalize">${currentTab} Editor</h2>`;
+
+  switch (currentTab) {
+    case "hero":
+      html += formHero();
+      break;
+    case "services":
+      html += formList(
+        "services",
+        ["icon", "title", "desc"],
+        siteData.services,
+      );
+      break;
+    case "techstack":
+      html += formList("techstack", ["name", "iconClass"], siteData.techstack);
+      break;
+    case "pricing":
+      html += formList(
+        "pricing",
+        ["name", "price", "unit", "desc", "features"],
+        siteData.pricing,
+      );
+      break;
+    case "testimonials":
+      html += formList(
+        "testimonials",
+        ["text", "by", "img"],
+        siteData.testimonials,
+      );
+      break;
+    case "faq":
+      html += formList("faq", ["q", "a"], siteData.faq);
+      break;
+    case "contact":
+      html += formObject("contact", siteData.contact, [
+        "heading",
+        "subtext",
+        "waNumber",
+        "waMessage",
+      ]);
+      break;
+    case "portfolio":
+      html += portfolioManager();
+      break;
+    default:
+      html = "<p>Pilih tab</p>";
+  }
+
+  container.innerHTML = html;
+  attachSaveListeners(); // untuk semua tab kecuali portfolio (dan tidak ganggu portfolio)
+
+  // Hanya untuk tab portfolio
+  if (currentTab === "portfolio") {
+    loadPortfolios();
+    attachPortfolioListener();
+  }
+}
+
+// ---------- FORM BUILDER ----------
+function formHero() {
+  const d = siteData.hero;
+  return `
+    <div class="space-y-4">
+      <input class="w-full bg-brand-navy border border-white/10 p-3 rounded text-white" value="${esc(d.titleLine1)}" data-field="hero.titleLine1" placeholder="Judul baris 1">
+      <input class="w-full bg-brand-navy border border-white/10 p-3 rounded text-white" value="${esc(d.titleLine2)}" data-field="hero.titleLine2" placeholder="Judul baris 2">
+      <input class="w-full bg-brand-navy border border-white/10 p-3 rounded text-white" value="${esc(d.subtitle)}" data-field="hero.subtitle" placeholder="Subjudul">
+      <input class="w-full bg-brand-navy border border-white/10 p-3 rounded text-white" value="${esc(d.cta1)}" data-field="hero.cta1" placeholder="Tombol 1">
+      <input class="w-full bg-brand-navy border border-white/10 p-3 rounded text-white" value="${esc(d.cta2)}" data-field="hero.cta2" placeholder="Tombol 2">
+      <button class="save-btn bg-brand-cyan text-brand-dark px-6 py-2 rounded font-bold">Simpan Hero</button>
+    </div>
+  `;
+}
+
+function formObject(key, obj, fields) {
+  let html = '<div class="space-y-4">';
+  fields.forEach((f) => {
+    html += `<input class="w-full bg-brand-navy border border-white/10 p-3 rounded text-white" value="${esc(obj[f] || "")}" data-field="${key}.${f}" placeholder="${f}">`;
+  });
+  html += `<button class="save-btn bg-brand-cyan text-brand-dark px-6 py-2 rounded font-bold">Simpan</button></div>`;
+  return html;
+}
+
+function formList(key, fields, items) {
+  let html = `<div class="space-y-6"><div id="${key}-list">`;
+  items.forEach((item, i) => {
+    html += `<div class="bg-brand-navy p-4 rounded border border-white/5 mb-4" data-index="${i}">`;
+    fields.forEach((f) => {
+      if (f === "features") {
+        const val = Array.isArray(item[f]) ? item[f].join(", ") : item[f] || "";
+        html += `<input class="w-full bg-brand-dark border border-white/10 p-2 rounded text-white mb-2" value="${esc(val)}" data-field="${key}.${i}.${f}" placeholder="${f} (pisahkan dengan koma)">`;
+      } else {
+        html += `<input class="w-full bg-brand-dark border border-white/10 p-2 rounded text-white mb-2" value="${esc(item[f] || "")}" data-field="${key}.${i}.${f}" placeholder="${f}">`;
+      }
+    });
+    html += `<button class="del-item-btn text-red-400 text-sm mt-2">Hapus</button></div>`;
+  });
+  html += `</div><button id="add-${key}-btn" class="text-brand-cyan underline">+ Tambah Item</button>
+           <button class="save-btn bg-brand-cyan text-brand-dark px-6 py-2 rounded font-bold mt-4 block">Simpan Semua</button></div>`;
+  return html;
+}
+
+// ---------- SAVE HANDLER ----------
+function attachSaveListeners() {
+  // FUNGSI BARU: Mengamankan ketikan yang belum disave agar tidak hilang
+  function syncInputsToSiteData() {
+    const inputs = document.querySelectorAll("[data-field]");
+    inputs.forEach((input) => {
+      const path = input.dataset.field;
+      const value = input.value;
+      setNestedValue(siteData, path, value);
+    });
+  }
+
+  // Tombol Simpan Semua
+  document.querySelectorAll(".save-btn").forEach((btn) => {
+    btn.addEventListener("click", async (e) => {
+      e.preventDefault();
+
+      // Sinkronisasi data ketikan terbaru
+      syncInputsToSiteData();
+      const newData = JSON.parse(JSON.stringify(siteData));
+
+      const docRef = doc(db, "siteContent", "homepage");
+      try {
+        await setDoc(docRef, newData, { merge: true });
+        siteData = newData;
+        alert("Berhasil disimpan!");
+      } catch (err) {
+        alert("Gagal menyimpan: " + err.message);
+      }
+    });
+  });
+
+  // Tombol tambah item (Diberi kata 'button' agar tidak salah target ke form)
+  document.querySelectorAll("button[id^='add-']").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      syncInputsToSiteData(); // Amankan ketikan dulu
+      const key = btn.id.replace("add-", "").replace("-btn", "");
+      const template = getDefaultItem(key);
+      if (!siteData[key]) siteData[key] = [];
+      siteData[key].push(template);
+      renderCurrentTab(); // Baru render ulang
+    });
+  });
+
+  // Tombol hapus item
+  document.querySelectorAll(".del-item-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      syncInputsToSiteData(); // Amankan ketikan dulu
+      const parent = e.target.closest("[data-index]");
+      const idx = parseInt(parent.dataset.index);
+      siteData[currentTab].splice(idx, 1);
+      renderCurrentTab(); // Baru render ulang
+    });
+  });
+}
+
+function getDefaultItem(key) {
+  switch (key) {
+    case "services":
+      return { icon: "bi-star", title: "Judul", desc: "Deskripsi" };
+    case "techstack":
+      return {
+        name: "Nama Teknologi",
+        iconClass: "devicon-react-original colored text-6xl",
+      };
+    case "pricing":
+      return {
+        name: "Nama",
+        price: "0",
+        unit: "/mo",
+        desc: "Deskripsi",
+        features: ["Fitur"],
+      };
+    case "testimonials":
+      return {
+        text: "Testimoni",
+        by: "Nama",
+        img: "https://i.pravatar.cc/150",
+      };
+    case "faq":
+      return { q: "Pertanyaan", a: "Jawaban" };
+    default:
+      return {};
+  }
+}
+
+function setNestedValue(obj, path, value) {
+  const keys = path.split(".");
+  let current = obj;
+  for (let i = 0; i < keys.length - 1; i++) {
+    let key = keys[i];
+    if (!isNaN(keys[i + 1]) && Array.isArray(current[key])) {
+      // biarkan
+    }
+    if (!current[key]) current[key] = {};
+    current = current[key];
+  }
+  const last = keys[keys.length - 1];
+  if (last === "features" && typeof value === "string") {
+    current[last] = value
+      .split(",")
+      .map((s) => s.trim())
+      .filter((s) => s !== "");
+  } else {
+    current[last] = value;
+  }
+}
+
+function esc(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+// ---------- PORTFOLIO MANAGER ----------
+async function loadPortfolios() {
+  const container = document.getElementById("portfolio-list");
+  if (!container) return;
+  container.innerHTML = "Memuat...";
+  const q = query(collection(db, "portfolios"), orderBy("createdAt", "desc"));
+  const snap = await getDocs(q);
+  container.innerHTML = "";
+  snap.forEach((doc) => {
+    const data = doc.data();
+    container.innerHTML += `
+      <div class="flex items-center justify-between bg-brand-navy p-3 rounded mb-2">
+        <div>
+          <p class="font-medium">${data.title}</p>
+          <p class="text-xs text-gray-400">${data.category}</p>
+        </div>
+        <button class="del-porto-btn text-red-400 text-sm" data-id="${doc.id}">Hapus</button>
+      </div>`;
+  });
+  document.querySelectorAll(".del-porto-btn").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const id = btn.dataset.id;
+      await deleteDoc(doc(db, "portfolios", id));
+      loadPortfolios();
+    });
+  });
+}
+
+function portfolioManager() {
+  return `
+    <div class="mb-10">
+      <h3 class="text-lg font-semibold mb-4">Tambah Baru</h3>
+      <form id="add-portfolio-form" class="space-y-4" autocomplete="off" onsubmit="return false;">
+        <input type="text" id="porto-title" required placeholder="Judul Proyek" class="w-full bg-brand-dark border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-cyan">
+        <select id="porto-category" class="w-full bg-brand-dark border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-cyan">
+          <option value="Web App">Web App</option>
+          <option value="E-Commerce">E-Commerce</option>
+          <option value="Company Profile">Company Profile</option>
+          <option value="Landing Page">Landing Page</option>
+        </select>
+        <input type="url" id="porto-image-url" required placeholder="URL Gambar" class="w-full bg-brand-dark border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-cyan">
+        <button type="button" id="btn-save-portfolio" class="bg-brand-cyan text-brand-dark font-bold py-2 px-6 rounded">Simpan</button>
+      </form>
+    </div>
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Daftar Portofolio</h3>
+      <div id="portfolio-list"></div>
+    </div>`;
+}
+
+function attachPortfolioListener() {
+  const btnSave = document.getElementById("btn-save-portfolio");
+  if (!btnSave) return;
+  // Hapus listener sebelumnya (jika ada) dengan membuat fungsi baru
+  btnSave.onclick = async () => {
+    const title = document.getElementById("porto-title").value.trim();
+    const category = document.getElementById("porto-category").value;
+    const imgUrl = document.getElementById("porto-image-url").value.trim();
+
+    if (!title || !imgUrl) {
+      alert("Judul dan URL gambar wajib diisi.");
+      return;
+    }
+
+    try {
+      await addDoc(collection(db, "portfolios"), {
+        title,
+        category,
+        imgUrl,
+        createdAt: serverTimestamp(),
+      });
+      alert("Portofolio ditambahkan!");
+      document.getElementById("add-portfolio-form").reset();
+      loadPortfolios();
+    } catch (err) {
+      alert("Gagal menyimpan: " + err.message);
+    }
+  };
+}
+ 
+ 
+============================== 
+FILE: E:\RASYA BELAJAR CODING\Jasa Website\codesya-website\script.js 
+============================== 
+// ==========================================
+// CODESYA STUDIO – MAIN SCRIPT (CLEAN)
+// ==========================================
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  orderBy,
+  query,
+  limit,
+  startAfter,
+  doc,       
+  getDoc
+} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+// --- Konfigurasi Firebase ---
+const firebaseConfig = {
+  apiKey: "AIzaSyD2O5Wjt-0Pn_y9naFsvS3iAwoyeWPqIQQ",
+  authDomain: "codesya-studio.firebaseapp.com",
+  projectId: "codesya-studio",
+  storageBucket: "codesya-studio.firebasestorage.app",
+  messagingSenderId: "846215546817",
+  appId: "1:846215546817:web:1d2b8dac64cfe596bc9140",
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// ==========================================
+// 1. NAVBAR SCROLL EFFECT
+// ==========================================
+const navbar = document.getElementById("navbar");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add("bg-brand-dark/80", "border-brand-cyan/30");
+    navbar.classList.remove("bg-white/5", "border-white/10");
+  } else {
+    navbar.classList.add("bg-white/5", "border-white/10");
+    navbar.classList.remove("bg-brand-dark/80", "border-brand-cyan/30");
+  }
+});
+
+// ==========================================
+// 2. TESTIMONIAL CAROUSEL (STAGGERED)
+// ==========================================
+const testimonialContainer = document.getElementById("testimonial-container");
+const btnPrev = document.getElementById("btn-prev-testi");
+const btnNext = document.getElementById("btn-next-testi");
+
+const testimonialsData = [
+  { id: 1, text: "Website yang dibuat sangat cepat...", by: "Alex, CEO TechCorp", img: "https://i.pravatar.cc/150?img=11" },
+  { id: 2, text: "Traffic toko online kami naik drastis...", by: "Budi, Owner HypeStore", img: "https://i.pravatar.cc/150?img=12" },
+  { id: 3, text: "Proses diskusi sangat nyambung...", by: "Citra, Founder Klinik Gigi", img: "https://i.pravatar.cc/150?img=5" },
+  { id: 4, text: "Saya awam soal coding...", by: "Diana, Business Consultant", img: "https://i.pravatar.cc/150?img=9" },
+  { id: 5, text: "Harga paket Pro sangat worth-it...", by: "Eko, Direktur Utama", img: "https://i.pravatar.cc/150?img=15" },
+];
+
+let currentList = [...testimonialsData];
+let cardSize = window.innerWidth > 640 ? 365 : 290;
+
+window.addEventListener("resize", () => {
+  const newSize = window.innerWidth > 640 ? 365 : 290;
+  if (newSize !== cardSize) {
+    cardSize = newSize;
+    initTestimonials();
+  }
+});
+
+function handleMove(steps) {
+  const newList = [...currentList];
+  if (steps > 0) {
+    for (let i = steps; i > 0; i--) newList.push(newList.shift());
+  } else {
+    for (let i = steps; i < 0; i++) newList.unshift(newList.pop());
+  }
+  currentList = newList;
+  updateCarouselPositions();
+}
+
+function initTestimonials() {
+  testimonialContainer.innerHTML = "";
+  testimonialsData.forEach((testi) => {
+    const card = document.createElement("div");
+    card.className = "testi-card inactive";
+    card.setAttribute("data-id", testi.id);
+    card.style.width = `${cardSize}px`;
+    card.style.height = `${cardSize}px`;
+    card.innerHTML = `
+      <span class="testi-deco-line bg-white/10"></span>
+      <img src="${testi.img}" alt="${testi.by}" class="mb-4 h-14 w-12 object-cover object-top border-2 border-transparent bg-brand-navy" style="box-shadow: 3px 3px 0px #00b4d8">
+      <h3 class="text-base sm:text-lg font-medium text-white mb-4 italic text-card-title">"${testi.text}"</h3>
+      <p class="absolute bottom-8 left-8 right-8 mt-2 text-sm italic text-gray-400 text-card-by">- ${testi.by}</p>
+    `;
+    testimonialContainer.appendChild(card);
+  });
+  updateCarouselPositions();
+}
+
+function updateCarouselPositions() {
+  currentList.forEach((testi, index) => {
+    const card = testimonialContainer.querySelector(`[data-id="${testi.id}"]`);
+    if (!card) return;
+    const position = currentList.length % 2
+      ? index - Math.floor(currentList.length / 2)
+      : index - currentList.length / 2;
+    const isCenter = position === 0;
+    card.style.zIndex = isCenter ? "20" : 10 - Math.abs(position);
+    const translateX = (cardSize / 1.3) * position;
+    const translateY = isCenter ? -45 : position % 2 ? 15 : -15;
+    const rotate = isCenter ? 0 : position % 2 ? 3 : -3;
+    const scale = isCenter ? 1.05 : 0.9;
+    card.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateY(${translateY}px) scale(${scale}) rotate(${rotate}deg)`;
+
+    const decoLine = card.querySelector(".testi-deco-line");
+    const img = card.querySelector("img");
+    const title = card.querySelector(".text-card-title");
+    const by = card.querySelector(".text-card-by");
+
+    if (isCenter) {
+      card.className = "testi-card active";
+      if (decoLine) decoLine.className = "testi-deco-line bg-brand-dark/20";
+      if (img) {
+        img.className = "mb-4 h-14 w-12 object-cover object-top border-2 border-brand-dark bg-brand-navy";
+        img.style.boxShadow = "3px 3px 0px #050B14";
+      }
+      if (title) title.className = "text-base sm:text-lg font-medium text-white mb-4 italic text-card-title";
+      if (by) by.className = "absolute bottom-8 left-8 right-8 mt-2 text-sm italic text-gray-400 text-card-by";
+    } else {
+      card.className = "testi-card inactive";
+      if (decoLine) decoLine.className = "testi-deco-line bg-white/10";
+      if (img) {
+        img.className = "mb-4 h-14 w-12 object-cover object-top border-2 border-transparent bg-brand-navy";
+        img.style.boxShadow = "3px 3px 0px #00b4d8";
+      }
+      if (title) title.className = "text-base sm:text-lg font-medium text-white mb-4 italic text-card-title";
+      if (by) by.className = "absolute bottom-8 left-8 right-8 mt-2 text-sm italic text-gray-400 text-card-by";
+    }
+    card.onclick = () => { if (position !== 0) handleMove(position); };
+  });
+}
+
+initTestimonials();
+btnPrev.addEventListener("click", () => handleMove(-1));
+btnNext.addEventListener("click", () => handleMove(1));
+
+// ==========================================
+// 3. WEBGL SHADER BACKGROUND
+// ==========================================
+const canvas = document.getElementById("shader-canvas");
+if (canvas) {
+  const gl = canvas.getContext("webgl");
+  if (gl) {
+    const vsSource = `attribute vec2 aPosition; void main() { gl_Position = vec4(aPosition, 0.0, 1.0); }`;
+    const fsSource = `
+      precision highp float;
+      uniform float iTime;
+      uniform vec2 iResolution;
+      mat2 rotate2d(float angle){ float c=cos(angle),s=sin(angle); return mat2(c,-s,s,c); }
+      float variation(vec2 v1,vec2 v2,float strength,float speed){ return sin(dot(normalize(v1),normalize(v2))*strength+iTime*speed)/100.0; }
+      vec3 paintCircle(vec2 uv,vec2 center,float rad,float width){
+          vec2 diff = center-uv;
+          float len = length(diff);
+          len += variation(diff,vec2(0.,1.),5.,2.);
+          len -= variation(diff,vec2(1.,0.),5.,2.);
+          float circle = smoothstep(rad-width,rad,len)-smoothstep(rad,rad+width,len);
+          return vec3(circle);
+      }
+      void main(){
+          vec2 uv = gl_FragCoord.xy/iResolution.xy;
+          uv.x *= 1.5; uv.x -= 0.25;
+          float mask = 0.0;
+          float radius = .35;
+          vec2 center = vec2(.5);
+          mask += paintCircle(uv,center,radius,.035).r;
+          mask += paintCircle(uv,center,radius-.018,.01).r;
+          mask += paintCircle(uv,center,radius+.018,.005).r;
+          vec2 v=rotate2d(iTime)*uv;
+          vec3 foregroundColor=vec3(v.x,v.y,.7-v.y*v.x);
+          vec3 color=mix(vec3(0.02, 0.04, 0.08), foregroundColor, mask * 0.4);
+          gl_FragColor=vec4(color,1.);
+      }`;
+    const vs = gl.createShader(gl.VERTEX_SHADER); gl.shaderSource(vs, vsSource); gl.compileShader(vs);
+    const fs = gl.createShader(gl.FRAGMENT_SHADER); gl.shaderSource(fs, fsSource); gl.compileShader(fs);
+    const program = gl.createProgram(); gl.attachShader(program, vs); gl.attachShader(program, fs); gl.linkProgram(program); gl.useProgram(program);
+    const buffer = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, -1,1, 1,-1, 1,1]), gl.STATIC_DRAW);
+    const pos = gl.getAttribLocation(program, "aPosition"); gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+    const iTimeLoc = gl.getUniformLocation(program, "iTime");
+    const iResLoc = gl.getUniformLocation(program, "iResolution");
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; gl.viewport(0,0,canvas.width,canvas.height); }
+    window.addEventListener("resize", resize); resize();
+    function render(time) { gl.uniform1f(iTimeLoc, time*0.001); gl.uniform2f(iResLoc, canvas.width, canvas.height); gl.drawArrays(gl.TRIANGLES,0,6); requestAnimationFrame(render); }
+    requestAnimationFrame(render);
+  }
+}
+
+// ==========================================
+// 4. RIPPLE BUTTON EFFECT
+// ==========================================
+document.querySelectorAll("#harga button, .ripple-btn").forEach(btn => {
+  btn.classList.add("ripple-btn");
+  btn.addEventListener("click", function(e) {
+    const rect = this.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const ripple = document.createElement("span");
+    ripple.className = "ripple-effect";
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+    this.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+  });
+});
+
+// ==========================================
+// 5. SPOTLIGHT CURSOR PADA KARTU HARGA
+// ==========================================
+document.querySelectorAll(".glow-card").forEach(card => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+  });
+});
+
+// ==========================================
+// 6. PORTOFOLIO DENGAN SKELETON & PAGINASI
+// ==========================================
+const portfolioContainer = document.getElementById("portfolio-container");
+const loadMoreBtn = document.getElementById("load-more-btn"); // tombol baru
+const PAGE_SIZE = 6;
+let lastVisibleDoc = null;
+let isLoading = false;
+
+// ==========================================
+// 6. PORTOFOLIO DENGAN INFINITE MARQUEE
+// ==========================================
+function createPortfolioCard(data) {
+    return `
+      <div class="group cursor-pointer bg-brand-navy rounded-2xl overflow-hidden border border-white/5 shadow-2xl transition duration-500 hover:border-brand-cyan/20 hover:shadow-cyan-900/40 relative">
+        
+        <div class="h-64 overflow-hidden relative">
+          <img src="${data.imgUrl}" alt="${data.title}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+          
+          <div class="absolute bottom-3 right-3 bg-brand-cyan/20 backdrop-blur-md px-3 py-1 rounded-xl text-xs text-brand-cyan font-bold shadow-lg">
+            ${data.category}
+          </div>
+        </div>
+        
+        <div class="py-4 px-5 flex items-center justify-between gap-4">
+          
+          <h3 class="text-lg font-bold text-white truncate transition group-hover:text-brand-cyan">
+            ${data.title}
+          </h3>
+          
+          <div class="text-brand-cyan text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all duration-300 shrink-0">
+            Lihat Detail <span class="transition-transform group-hover:translate-x-1">→</span>
+          </div>
+          
+        </div>
+        
+      </div>
+    `;
+}
+
+async function loadPortfolioMarquee() {
+    const col1 = document.getElementById('col-1');
+    const col2 = document.getElementById('col-2');
+    const col3 = document.getElementById('col-3');
+    if (!col1 || !col2 || !col3) return;
+
+    try {
+        // Ambil semua portofolio terbaru dari Firebase
+        const q = query(collection(db, "portfolios"), orderBy("createdAt", "desc"));
+        const snapshot = await getDocs(q);
+
+        if (snapshot.empty) {
+            col1.innerHTML = '<p class="text-gray-400 text-center">Belum ada portofolio.</p>';
+            return;
+        }
+
+        // Variabel penampung data untuk ke-3 kolom
+        let htmlCol1 = '';
+        let htmlCol2 = '';
+        let htmlCol3 = '';
+        let index = 0;
+
+        // Bagi data secara merata (selang-seling) ke 3 kolom
+        snapshot.forEach(doc => {
+            const data = doc.data();
+            const card = createPortfolioCard(data);
+            
+            if (index % 3 === 0) htmlCol1 += card;
+            else if (index % 3 === 1) htmlCol2 += card;
+            else htmlCol3 += card;
+            
+            index++;
+        });
+
+        // TRIK INFINITE SCROLL: Gandakan 2x lipat datanya di dalam kolom yang sama
+        col1.innerHTML = htmlCol1 + htmlCol1;
+        col2.innerHTML = htmlCol2 + htmlCol2;
+        col3.innerHTML = htmlCol3 + htmlCol3;
+
+    } catch (error) {
+        console.error("Gagal memuat portofolio:", error);
+    }
+}
+
+// Fungsi untuk merender array dokumen ke container (tambahan, bukan ganti)
+function renderCards(snapshot) {
+  snapshot.forEach(doc => {
+    const data = doc.data();
+    portfolioContainer.innerHTML += createPortfolioCard(data);
+  });
+}
+
+// Fungsi menampilkan skeleton loader
+function showSkeleton(count = 3) {
+  let html = '';
+  for (let i = 0; i < count; i++) {
+    html += `
+      <div class="rounded-xl overflow-hidden bg-brand-navy border border-white/5">
+        <div class="gooey-loader-container" style="--gooey-primary-color: #00b4d8; --gooey-secondary-color: #0A192F; --gooey-border-color: rgba(255,255,255,0.1);"></div>
+        <div class="p-4 space-y-2">
+          <div class="h-4 bg-white/10 rounded w-3/4 animate-pulse"></div>
+          <div class="h-3 bg-white/10 rounded w-1/2 animate-pulse"></div>
+        </div>
+      </div>
+    `;
+  }
+  portfolioContainer.innerHTML = html;
+}
+
+// Fungsi fetch halaman pertama (dipanggil saat load)
+async function loadFirstPortfolio() {
+  if (!portfolioContainer) return;
+  showSkeleton(3); // tampilkan skeleton
+
+  try {
+    const q = query(collection(db, "portfolios"), orderBy("createdAt", "desc"), limit(PAGE_SIZE));
+    const snapshot = await getDocs(q);
+    portfolioContainer.innerHTML = ""; // hapus skeleton
+    if (snapshot.empty) {
+      portfolioContainer.innerHTML = '<p class="text-gray-400 text-center col-span-full">Belum ada portofolio yang diunggah.</p>';
+      if (loadMoreBtn) loadMoreBtn.classList.add("hidden");
+      return;
+    }
+    renderCards(snapshot);
+    lastVisibleDoc = snapshot.docs[snapshot.docs.length - 1];
+    // Jika data kurang dari PAGE_SIZE, sembunyikan tombol
+    if (loadMoreBtn) {
+      if (snapshot.docs.length < PAGE_SIZE) loadMoreBtn.classList.add("hidden");
+      else loadMoreBtn.classList.remove("hidden");
+    }
+  } catch (error) {
+    console.error("Gagal memuat portofolio:", error);
+    portfolioContainer.innerHTML = '<p class="text-red-400 text-center col-span-full">Gagal memuat data portofolio. Periksa koneksi internet.</p>';
+  }
+}
+
+// Fungsi "Muat Lebih Banyak"
+async function loadMorePortfolio() {
+  if (isLoading || !lastVisibleDoc) return;
+  isLoading = true;
+  loadMoreBtn.disabled = true;
+  loadMoreBtn.innerHTML = '<span class="animate-pulse">Memuat...</span>';
+
+  try {
+    const q = query(collection(db, "portfolios"), orderBy("createdAt", "desc"), startAfter(lastVisibleDoc), limit(PAGE_SIZE));
+    const snapshot = await getDocs(q);
+    if (snapshot.empty) {
+      loadMoreBtn.classList.add("hidden");
+      return;
+    }
+    renderCards(snapshot);
+    lastVisibleDoc = snapshot.docs[snapshot.docs.length - 1];
+    if (snapshot.docs.length < PAGE_SIZE) {
+      loadMoreBtn.classList.add("hidden");
+    }
+  } catch (error) {
+    console.error("Gagal memuat lebih banyak:", error);
+    alert("Gagal memuat portofolio tambahan.");
+  } finally {
+    isLoading = false;
+    loadMoreBtn.disabled = false;
+    loadMoreBtn.innerHTML = 'Muat Lebih Banyak';
+  }
+}
+
+// Event listener untuk tombol (jika ada)
+if (loadMoreBtn) {
+  loadMoreBtn.addEventListener("click", loadMorePortfolio);
+}
+
+// ==========================================
+// 8. EFEK PARALLAX SCROLL PORTOFOLIO
+// ==========================================
+function initPortfolioParallax() {
+    const section = document.getElementById('portofolio');
+    
+    window.addEventListener('scroll', () => {
+        // Efek ini hanya bagus di layar Laptop/PC (saat grid menjadi 3 kolom).
+        // Di HP (1 kolom), kita reset agar tampilannya tetap normal dan rapi.
+        if (window.innerWidth < 1024) {
+            document.querySelectorAll('#portfolio-container > div').forEach(card => {
+                card.style.transform = 'translateY(0px)';
+            });
+            return;
+        }
+
+        if (!section) return;
+        
+        // Deteksi posisi area portofolio terhadap layar (viewport)
+        const rect = section.getBoundingClientRect();
+        
+        // Hanya jalankan animasi jika area portofolio sedang terlihat di layar
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            const cards = document.querySelectorAll('#portfolio-container > div');
+            
+            // Hitung seberapa jauh kita sudah men-scroll area ini
+            let scrollProgress = window.innerHeight - rect.top;
+            
+            cards.forEach((card, index) => {
+                // Tentukan letak kolom (0 = Kiri, 1 = Tengah, 2 = Kanan)
+                const colIndex = index % 3;
+                
+                // Kecepatan gerak (bisa kamu ubah, misal 0.15 jika kurang cepat)
+                const speed = 0.1; 
+                
+                // Tambahkan efek transisi singkat agar pergerakannya sangat mulus (tidak patah-patah)
+                card.style.transition = 'transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                
+                if (colIndex === 1) {
+                    // KOLOM TENGAH: Bergerak turun ke BAWAH (nilai positif)
+                    card.style.transform = `translateY(${scrollProgress * speed}px)`;
+                } else {
+                    // KOLOM KIRI & KANAN: Bergerak naik ke ATAS (nilai negatif)
+                    card.style.transform = `translateY(${scrollProgress * -speed}px)`;
+                }
+            });
+        }
+    });
+}
+
+// Jalankan saat halaman siap
+window.addEventListener("DOMContentLoaded", () => {
+    loadPortfolioMarquee(); 
+    loadSiteContent();
+    initPortfolioParallax();
+});
+
+// ==========================================
+// 7. MEMUAT KONTEN TEKS DARI FIREBASE (FAQ)
+// ==========================================
+async function loadSiteContent() {
+    try {
+        // Mengambil dokumen "homepage" dari koleksi "siteContent"
+        const docRef = doc(db, "siteContent", "homepage");
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+            const data = docSnap.data();
+            
+            // --- RENDER DATA FAQ ---
+            const faqContainer = document.getElementById("faq-container");
+            if (faqContainer && data.faq && data.faq.length > 0) {
+                faqContainer.innerHTML = ""; // Kosongkan tulisan "Memuat..."
+                
+                // Membagi FAQ menjadi 2 kolom (Kiri dan Kanan) agar desain seimbang
+                let col1HTML = '<div class="space-y-4">';
+                let col2HTML = '<div class="space-y-4">';
+                
+                data.faq.forEach((item, index) => {
+                    const faqHTML = `
+                      <details class="group bg-brand-navy border border-white/5 p-5 rounded-xl cursor-pointer">
+                        <summary class="flex justify-between items-center font-medium list-none outline-none">
+                            <span>${item.q}</span>
+                            <span class="transition group-open:rotate-180 text-brand-cyan text-xl">+</span>
+                        </summary>
+                        <div class="text-gray-400 mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+                            ${item.a}
+                        </div>
+                      </details>
+                    `;
+                    // Logika membagi item secara selang-seling ke kiri dan kanan
+                    if (index % 2 === 0) col1HTML += faqHTML;
+                    else col2HTML += faqHTML;
+                });
+                
+                col1HTML += '</div>';
+                col2HTML += '</div>';
+                
+                // Gabungkan kedua kolom ke dalam container utama
+                faqContainer.innerHTML = col1HTML + col2HTML;
+            } else if (faqContainer) {
+                faqContainer.innerHTML = '<p class="text-gray-500 text-center col-span-full">Belum ada FAQ yang ditambahkan.</p>';
+            }
+
+            // --- RENDER DATA TECH STACK ---
+            const techContainer = document.getElementById("techstack-marquee");
+            if (techContainer && data.techstack && data.techstack.length > 0) {
+                let techHTML = '<div class="flex items-center gap-16 px-8 min-w-max">';
+                
+                data.techstack.forEach(tech => {
+                    techHTML += `
+                    <div class="flex flex-col items-center gap-3 hover:scale-110 transition">
+                        <i class="${tech.iconClass}"></i>
+                        <span class="text-xs font-semibold text-gray-400">${tech.name}</span>
+                    </div>`;
+                });
+                
+                techHTML += '</div>';
+                
+                // Dimasukkan 2 kali agar animasi marquee mulus dan looping tak terbatas
+                techContainer.innerHTML = techHTML + techHTML;
+            } else if (techContainer) {
+                techContainer.innerHTML = '<p class="text-gray-500 text-center col-span-full w-full">Belum ada teknologi yang ditambahkan di Admin.</p>';
+            }
+            
+        }
+    } catch (error) {
+        console.error("Gagal memuat konten situs:", error);
+    }
+} 
+ 

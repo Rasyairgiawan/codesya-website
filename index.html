@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeSya Studio | Jasa Pembuatan Website Profesional</title>
+
+    <link rel="icon" href="logo.png" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: { dark: "#050B14", navy: "#0A192F", cyan: "#00b4d8" },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Inter", "sans-serif"],
+            },
+            animation: {
+              marquee: "marquee 25s linear infinite",
+              'marquee-up': 'marqueeUp 30s linear infinite',
+              'marquee-down': 'marqueeDown 30s linear infinite',
+            },
+            keyframes: {
+              marquee: {
+                "0%": { transform: "translateX(0%)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+              marqueeUp: {
+                "0%": { transform: "translateY(0%)" },
+                "100%": { transform: "translateY(-50%)" },
+              },
+              marqueeDown: {
+                "0%": { transform: "translateY(-50%)" },
+                "100%": { transform: "translateY(0%)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-brand-dark text-white font-sans antialiased overflow-x-hidden relative"
+  >
+
+  <canvas id="shader-canvas"></canvas>
+
+  <svg class="absolute w-0 h-0">
+    <defs>
+      <filter id="gooey-loader-filter">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur" />
+        <feColorMatrix
+          in="blur"
+          mode="matrix"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 48 -7"
+          result="goo"
+        />
+        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+      </filter>
+    </defs>
+  </svg>
+
+    <nav
+      id="navbar"
+      class="fixed z-50 top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl transition-all duration-300 bg-white/5 backdrop-blur-lg border border-white/10 rounded-full px-6 md:px-8 py-2 shadow-2xl shadow-black/50"
+    >
+      <div class="flex justify-between items-center h-14">
+        <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+          <img
+            src="logo.png"
+            alt="Logo CodeSya"
+            class="h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
+          />
+          <span
+            class="text-xl md:text-2xl font-bold tracking-tight text-white hidden sm:block"
+          >
+            Code<span class="text-brand-cyan">Sya</span>
+          </span>
+        </div>
+
+        <div
+          class="hidden md:flex space-x-8 items-center absolute left-1/2 -translate-x-1/2"
+        >
+          <a
+            href="#beranda"
+            class="text-gray-300 hover:text-white text-sm font-medium transition"
+            >Beranda</a
+          >
+          <a
+            href="#layanan"
+            class="text-gray-300 hover:text-white text-sm font-medium transition"
+            >Layanan</a
+          >
+          <a
+            href="#portofolio"
+            class="text-gray-300 hover:text-white text-sm font-medium transition"
+            >Portofolio</a
+          >
+          <a
+            href="#harga"
+            class="text-gray-300 hover:text-white text-sm font-medium transition"
+            >Harga</a
+          >
+        </div>
+
+        <div class="hidden md:flex">
+          <a
+            href="#kontak"
+            class="bg-brand-cyan text-brand-dark px-5 py-2.5 rounded-full font-bold text-sm hover:bg-white transition flex items-center gap-2 shadow-[0_0_15px_rgba(0,180,216,0.3)]"
+          >
+            WhatsApp Kami <i class="bi bi-whatsapp text-base"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ========== HERO SECTION (dinamis) ========== -->
+    <section
+      id="beranda"
+      class="pt-32 pb-20 md:pt-40 md:pb-28 px-4 relative flex items-center min-h-screen"
+    >
+      <div
+        class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-brand-cyan/20 rounded-full blur-[120px] -z-10 pointer-events-none"
+      ></div>
+      <div class="max-w-5xl mx-auto text-center w-full">
+        <h1 id="hero-title"
+          class="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight"
+        >
+          Bikin Bisnismu Go Digital <br class="hidden md:block" />
+          dengan
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-blue-500"
+            >Website Profesional</span
+          >
+        </h1>
+        <p id="hero-subtitle"
+          class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
+        >
+          Tingkatkan kredibilitas dan raih lebih banyak pelanggan. Kami
+          merancang website yang cepat, modern, dan siap menaikkan omset
+          bisnismu.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a id="hero-cta1"
+            href="#harga"
+            class="bg-brand-cyan text-brand-dark px-8 py-4 rounded-full font-semibold hover:bg-white transition text-lg"
+            >Mulai Proyekmu</a
+          >
+          <a id="hero-cta2"
+            href="#portofolio"
+            class="bg-transparent border border-white/20 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition text-lg"
+            >Lihat Portofolio</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TECH STACK MARQUEE (dinamis) ========== -->
+    <section class="py-12 border-y border-white/10 bg-white/5 overflow-hidden">
+      <div class="max-w-7xl mx-auto text-center mb-10">
+        <p class="text-sm text-gray-400 font-medium tracking-widest uppercase">Teknologi yang Kami Gunakan</p>
+      </div>
+      <div id="techstack-marquee" class="flex w-max animate-marquee hover:[animation-play-state:paused] transition duration-500">
+        <p class="text-brand-cyan animate-pulse px-8 text-center col-span-full">Memuat teknologi...</p>
+      </div>
+    </section>
+    
+    <!-- ========== LAYANAN SECTION (dinamis) ========== -->
+    <section id="layanan" class="py-24 px-4 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-semibold mb-4">Layanan <span class="text-brand-cyan">Terbaik</span> Kami</h2>
+                <p class="text-gray-400 text-lg">Solusi digital tepat guna untuk berbagai kebutuhan bisnismu.</p>
+            </div>
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Diisi oleh JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PORTOFOLIO SECTION (marquee 3 kolom) ========== -->
+    <section id="portofolio" class="py-24 px-4 relative z-10">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-semibold mb-4">Karya <span class="text-brand-cyan">Unggulan</span></h2>
+                <p class="text-gray-400 text-lg">Beberapa proyek menakjubkan yang telah kami selesaikan.</p>
+            </div>
+            
+            <div class="h-[600px] md:h-[800px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_5%,black_95%,transparent)]">
+                
+                <div id="portfolio-container" class="grid grid-cols-1 md:grid-cols-3 gap-8 h-full">
+                    
+                    <div class="overflow-hidden h-full flex flex-col group">
+                        <div id="col-1" class="flex flex-col gap-8 animate-marquee-up group-hover:[animation-play-state:paused]">
+                            </div>
+                    </div>
+                    
+                    <div class="overflow-hidden h-full flex flex-col hidden md:flex group">
+                        <div id="col-2" class="flex flex-col gap-8 animate-marquee-down group-hover:[animation-play-state:paused]">
+                            </div>
+                    </div>
+                    
+                    <div class="overflow-hidden h-full flex flex-col hidden md:flex group">
+                        <div id="col-3" class="flex flex-col gap-8 animate-marquee-up group-hover:[animation-play-state:paused]">
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CARA KERJA (statis) ========== -->
+    <section class="py-24 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-semibold mb-4">Cara <span class="text-brand-cyan">Kerja</span> Kami</h2>
+                <p class="text-gray-400 text-lg">Proses transparan dan efisien dari ide hingga rilis.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <div class="hidden md:block absolute top-8 left-[12.5%] w-[75%] h-[2px] bg-white/10 z-0"></div>
+                <div class="text-center relative z-10">
+                    <div class="w-16 h-16 mx-auto bg-brand-dark border-2 border-brand-cyan text-brand-cyan rounded-full flex items-center justify-center text-2xl font-bold mb-4 shadow-[0_0_15px_rgba(0,180,216,0.2)]">1</div>
+                    <h3 class="font-semibold text-lg mb-2">Diskusi & Ide</h3>
+                    <p class="text-sm text-gray-400">Menganalisa kebutuhan dan target bisnismu.</p>
+                </div>
+                <div class="text-center relative z-10 group">
+                    <div class="w-16 h-16 mx-auto bg-brand-dark border-2 border-white/20 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 group-hover:border-brand-cyan group-hover:text-brand-cyan transition duration-300">2</div>
+                    <h3 class="font-semibold text-lg mb-2">Desain UI/UX</h3>
+                    <p class="text-sm text-gray-400">Membuat mockup visual yang menarik.</p>
+                </div>
+                <div class="text-center relative z-10 group">
+                    <div class="w-16 h-16 mx-auto bg-brand-dark border-2 border-white/20 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 group-hover:border-brand-cyan group-hover:text-brand-cyan transition duration-300">3</div>
+                    <h3 class="font-semibold text-lg mb-2">Development</h3>
+                    <p class="text-sm text-gray-400">Proses coding dengan teknologi modern.</p>
+                </div>
+                <div class="text-center relative z-10 group">
+                    <div class="w-16 h-16 mx-auto bg-brand-dark border-2 border-white/20 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 group-hover:border-brand-cyan group-hover:text-brand-cyan transition duration-300">4</div>
+                    <h3 class="font-semibold text-lg mb-2">Testing & Launch</h3>
+                    <p class="text-sm text-gray-400">Website siap diakses oleh pelangganmu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HARGA SECTION (dinamis) ========== -->
+    <section id="harga" class="py-24 px-4 relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-light mb-4">Temukan <span class="text-brand-cyan font-semibold">Paket Sempurna</span> untuk Bisnismu</h2>
+                <p class="text-gray-400 text-lg">Mulai gratis, lalu kembangkan. Paket fleksibel untuk semua proyek.</p>
+            </div>
+            <div id="pricing-grid" class="flex flex-col md:flex-row gap-8 justify-center items-center">
+                <!-- Diisi oleh JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONI SECTION (dinamis) ========== -->
+    <section class="py-24 bg-white/5 relative overflow-hidden" id="testimoni">
+      <div class="max-w-4xl mx-auto text-center mb-8 relative z-10">
+        <h2 class="text-3xl md:text-5xl font-semibold mb-4">Apa Kata Klien Kami?</h2>
+        <p class="text-gray-400 text-lg">Kepercayaan mereka adalah pencapaian terbesar kami.</p>
+      </div>
+      <div id="testimonial-container" class="relative w-full h-[500px] flex justify-center items-center overflow-hidden"></div>
+      <div class="flex justify-center gap-4 mt-4 relative z-20">
+        <button id="btn-prev-testi" class="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 hover:bg-brand-cyan hover:text-brand-dark transition">←</button>
+        <button id="btn-next-testi" class="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 hover:bg-brand-cyan hover:text-brand-dark transition">→</button>
+      </div>
+    </section>
+
+    <!-- ========== FAQ SECTION (dinamis) ========== -->
+    <section id="faq" class="py-24 px-4 max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-sm text-brand-cyan font-medium tracking-wide mb-2 uppercase">Bantuan & Informasi</p>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-6">Pertanyaan yang Sering Diajukan</h2>
+        <p class="text-gray-400 max-w-xl mx-auto">Dapatkan jawaban instan tentang layanan, proses setup, dan harga pembuatan website.</p>
+      </div>
+      
+      <div id="faq-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+         <p class="text-brand-cyan animate-pulse col-span-full text-center">Memuat FAQ...</p>
+      </div>
+    </section>
+
+    <!-- ========== KONTAK SECTION (dinamis) ========== -->
+    <section id="kontak" class="py-24 px-4 bg-gradient-to-b from-brand-dark to-brand-navy border-t border-white/5">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 id="contact-heading" class="text-4xl md:text-5xl font-bold mb-6">Siap Membangun Kehadiran Digital Anda?</h2>
+        <p id="contact-subtext" class="text-xl text-gray-400 mb-10">Jangan biarkan kompetitormu mendahului. Hubungi kami sekarang dan mari diskusikan proyek impianmu.</p>
+        <a id="contact-wa-link" href="https://wa.me/6285735828392" target="_blank" class="inline-flex items-center gap-3 bg-brand-cyan text-brand-dark px-10 py-4 rounded-full font-bold text-lg hover:bg-white transition shadow-[0_0_20px_rgba(0,180,216,0.5)]"><i class="bi bi-whatsapp text-2xl"></i> Chat via WhatsApp</a>
+      </div>
+    </section>
+
+    <footer class="bg-brand-dark pt-16 pb-8 border-t border-white/10 px-4">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4"><img src="logo.png" alt="Logo CodeSya" class="h-10 w-auto object-contain"/><span class="text-2xl font-bold tracking-tight text-white">Code<span class="text-brand-cyan">Sya</span></div>
+          <p class="text-gray-400 text-sm max-w-sm leading-relaxed">Mitra terpercaya untuk membangun identitas digital bisnis Anda. Kami menciptakan website yang menggabungkan estetika desain dan performa tinggi.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-white">Layanan</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-brand-cyan transition">Landing Page</a></li>
+            <li><a href="#" class="hover:text-brand-cyan transition">Company Profile</a></li>
+            <li><a href="#" class="hover:text-brand-cyan transition">E-Commerce</a></li>
+            <li><a href="#" class="hover:text-brand-cyan transition">Custom Web App</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-white">Hubungi Kami</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li>hello@codesyastudio.com</li>
+            <li>Malang, Jawa Timur, Indonesia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+        <p>&copy; 2026 CodeSya Studio. All rights reserved.</p>
+        <div class="flex gap-4 text-lg">
+          <a href="#" class="hover:text-brand-cyan transition"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="hover:text-brand-cyan transition"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="hover:text-brand-cyan transition"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/6285735828392" target="_blank" class="fixed bottom-6 right-6 z-[100] bg-[#25D366] text-white w-14 h-14 rounded-full shadow-lg shadow-[#25D366]/30 flex items-center justify-center hover:scale-110 transition duration-300 group cursor-pointer">
+      <i class="bi bi-whatsapp text-3xl"></i>
+      <span class="absolute right-16 bg-white text-gray-800 text-sm font-semibold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none whitespace-nowrap shadow-md">Chat Kami!<span class="absolute top-1/2 -right-1 -translate-y-1/2 w-2 h-2 bg-white rotate-45"></span></span>
+    </a>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
